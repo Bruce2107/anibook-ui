@@ -1,0 +1,66 @@
+{
+  "name": "anibook-ui",
+  "version": "1.0.0",
+  "description": "Lib com os componentes do Anibook",
+  "main": "dist/index.js",
+  "repository": "https://github.com/Bruce2107/anibook-ui.git",
+  "author": {
+    "email": "edu.ed322@gmail.com",
+    "name": "Eduardo Henrique",
+    "url": "https://github.com/Bruce2107"
+  },
+  "license": "MIT",
+  "keywords": [
+    "anibook",
+    "library",
+    "typescript",
+    "ui"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn run build",
+    "storybook": "start-storybook",
+    "prepublishOnly": "yarn test",
+    "version": "git add -A src",
+    "postpublish": "git push && git push --tags",
+    "test": "jest"
+  },
+  "bugs": {
+    "email": "edu.ed322@gmail.com",
+    "url": "https://github.com/Bruce2107/anibook/issues"
+  },
+  "homepage": "https://github.com/Bruce2107/anibook",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@types/react": "^16.9.41",
+    "@types/storybook__addon-info": "^5.2.1",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest-dom": "^3.0.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-only-error": "^1.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-plugin-unicorn": "^20.1.0",
+    "jest": "^26.1.0",
+    "jest-dom": "^4.0.0",
+    "prettier": "^2.0.5",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@storybook/addon-a11y": "^5.3.19",
+    "@storybook/addon-centered": "^5.3.19",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
