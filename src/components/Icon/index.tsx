@@ -29,6 +29,10 @@ interface Props {
    * @default auto
    */
   width?: string;
+  /**
+   * Função do onClick
+   */
+  onClick?: () => void;
 }
 const Icon: FC<Props> = ({
   color,
@@ -37,6 +41,7 @@ const Icon: FC<Props> = ({
   width = 'auto',
   hoverColor = color,
   hoverBackground = 'trasparent',
+  onClick,
 }) => {
   return (
     <IconStyled
@@ -45,6 +50,7 @@ const Icon: FC<Props> = ({
       hoverBackground={hoverBackground}
       hoverColor={hoverColor}
       width={width}
+      onClick={onClick}
     >
       {icon}
     </IconStyled>

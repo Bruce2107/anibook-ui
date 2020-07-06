@@ -68,6 +68,24 @@ import Icon from '.';
   </Story>
 </Preview>
 
+## Icon With OnClick Event
+
+<Preview>
+  <Story name="Icon With OnClick Event">
+    <div style={{ backgroundColor: '#444' }}>
+      <Icon
+        color="#00D2D3"
+        height="50px"
+        icon={<FaGithubAlt />}
+        width="100px"
+        hoverColor="#FF1493"
+        hoverBackground="#FFEA"
+        onClick={() => {window.open('https://anibook.com.br', '_blank');}}
+      />
+    </div>
+  </Story>
+</Preview>
+
 ## Props
 
 <Props of={Icon} />
