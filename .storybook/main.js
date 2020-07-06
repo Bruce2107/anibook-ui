@@ -3,6 +3,7 @@ const { resolve } = require('path');
 module.exports = {
   stories: ['../src/components/**/*.stories.(tsx|mdx)'],
   addons: [
+    '@storybook/addon-viewport/register',
     '@storybook/addon-a11y/register',
     '@storybook/addon-docs/react/preset',
   ],
