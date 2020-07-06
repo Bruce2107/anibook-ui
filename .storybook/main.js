@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+const { resolve } = require('path');
 
 module.exports = {
   stories: ['../src/components/**/*.stories.tsx'],
