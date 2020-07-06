@@ -1,12 +1,14 @@
-import React from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withA11y } from '@storybook/addon-a11y';
 import { FaGithubAlt } from 'react-icons/fa';
-import { storiesOf } from '@storybook/react';
 import Icon from '.';
 
-const stories = storiesOf('Icon', module);
+<Meta title="Components|Icon" component={Icon} />
 
-stories
-  .add('Icon Light', () => (
+## Icon Light
+
+<Preview>
+  <Story name="Icon Light">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
         color="#FF1493"
@@ -15,8 +17,13 @@ stories
         width="100px"
       />
     </div>
-  ))
-  .add('Icon Light With Hover', () => (
+  </Story>
+</Preview>
+
+## Icon Light With Hover
+
+<Preview>
+  <Story name="Icon Light With Hover">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
         color="#FF1493"
@@ -27,8 +34,13 @@ stories
         hoverBackground="#FFEA"
       />
     </div>
-  ))
-  .add('Icon Dark', () => (
+  </Story>
+</Preview>
+
+## Icon Dark
+
+<Preview>
+  <Story name="Icon Dark">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
         color="#00D2D3"
@@ -37,8 +49,13 @@ stories
         width="100px"
       />
     </div>
-  ))
-  .add('Icon Dark With Hover', () => (
+  </Story>
+</Preview>
+
+## Icon Dark With Hover
+
+<Preview>
+  <Story name="Icon Dark With Hover">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
         color="#00D2D3"
@@ -49,4 +66,9 @@ stories
         hoverBackground="#FFEA"
       />
     </div>
-  ));
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Icon} />

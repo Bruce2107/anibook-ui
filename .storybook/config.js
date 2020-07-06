@@ -1,17 +1,14 @@
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
-import centered from '@storybook/addon-centered/react';
-import theme from './theme';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 
 addParameters({
-  options: {
-    theme,
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
   },
 });
 
-addDecorator(withInfo);
 addDecorator(withA11y);
-addDecorator(centered);
 
-configure(require.context('../src', true, /\.stories\.tsx$/), module);
+configure(require.context('../src', true, /\.stories\.(tsx|mdx)$/), module);
