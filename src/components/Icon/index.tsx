@@ -16,22 +16,25 @@ interface Props {
   hoverColor?: string;
   /**
    * Cor de backgroundo do hover effect
+   * @default trasparent
    */
   hoverBackground?: string;
   /**
    * Altura do ícone
+   * @default 24px
    */
-  height: string;
+  height?: string;
   /**
    * Largura do ícone
+   * @default 24px
    */
-  width: string;
+  width?: string;
 }
 const Icon: FC<Props> = ({
   color,
-  height,
+  height = '24px',
   icon,
-  width,
+  width = '24px',
   hoverColor = color,
   hoverBackground = 'trasparent',
 }) => {
