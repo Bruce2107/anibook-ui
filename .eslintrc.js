@@ -43,5 +43,6 @@ module.exports = {
     'react/prop-types': [0],
     'import/no-unresolved': [0],
     'import/extensions': [0],
+    'no-param-reassign': [0],
   },
 };
