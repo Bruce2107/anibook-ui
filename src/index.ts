@@ -1,2 +1,2 @@
 export { default as Icon } from './components/Icon';
-export const type = 'anibook';
+export { default as Card } from './components/Card';
