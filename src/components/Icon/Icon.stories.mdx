@@ -1,0 +1,91 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withA11y } from '@storybook/addon-a11y';
+import { FaGithubAlt } from 'react-icons/fa';
+import Icon from '.';
+
+<Meta title="Components|Icon" component={Icon} />
+
+## Icon Light
+
+<Preview>
+  <Story name="Icon Light">
+    <div style={{ backgroundColor: '#444' }}>
+      <Icon
+        color="#FF1493"
+        height="50px"
+        icon={<FaGithubAlt />}
+      />
+    </div>
+  </Story>
+</Preview>
+
+## Icon Light With Hover
+
+<Preview>
+  <Story name="Icon Light With Hover">
+    <div style={{ backgroundColor: '#444' }}>
+      <Icon
+        color="#FF1493"
+        height="50px"
+        icon={<FaGithubAlt />}
+        width="100px"
+        hoverColor="#00D2D3"
+        hoverBackground="#FFEA"
+      />
+    </div>
+  </Story>
+</Preview>
+
+## Icon Dark
+
+<Preview>
+  <Story name="Icon Dark">
+    <div style={{ backgroundColor: '#444' }}>
+      <Icon
+        color="#00D2D3"
+        height="50px"
+        icon={<FaGithubAlt />}
+        width="100px"
+      />
+    </div>
+  </Story>
+</Preview>
+
+## Icon Dark With Hover
+
+<Preview>
+  <Story name="Icon Dark With Hover">
+    <div style={{ backgroundColor: '#444' }}>
+      <Icon
+        color="#00D2D3"
+        height="50px"
+        icon={<FaGithubAlt />}
+        width="100px"
+        hoverColor="#FF1493"
+        hoverBackground="#FFEA"
+      />
+    </div>
+  </Story>
+</Preview>
+
+## Icon With OnClick Event
+
+<Preview>
+  <Story name="Icon With OnClick Event">
+    <div style={{ backgroundColor: '#444' }}>
+      <Icon
+        color="#00D2D3"
+        height="50px"
+        icon={<FaGithubAlt />}
+        width="100px"
+        hoverColor="#FF1493"
+        hoverBackground="#FFEA"
+        onClick={() => {window.open('https://anibook.com.br', '_blank');}}
+      />
+    </div>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={Icon} />

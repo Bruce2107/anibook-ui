@@ -1,10 +1,19 @@
-import { configure, addDecorator } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
-import centered from '@storybook/addon-centered/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-addDecorator(withInfo);
+addParameters({
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+    defaultViewport: 'pixel',
+  },
+});
+
 addDecorator(withA11y);
-addDecorator(centered);
 
-configure(require.context('../src', true, /\.stories\.tsx$/), module);
+configure(require.context('../src', true, /\.stories\.(tsx|mdx)$/), module);

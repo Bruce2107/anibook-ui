@@ -1,7 +1,12 @@
 const { resolve } = require('path');
 
 module.exports = {
-  stories: ['../src/components/**/*.stories.tsx'],
+  stories: ['../src/components/**/*.stories.(tsx|mdx)'],
+  addons: [
+    '@storybook/addon-viewport/register',
+    '@storybook/addon-a11y/register',
+    '@storybook/addon-docs/react/preset',
+  ],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.tsx?$/,
@@ -18,5 +23,4 @@ module.exports = {
     config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
-  addons: ['@storybook/addon-a11y/register'],
 };

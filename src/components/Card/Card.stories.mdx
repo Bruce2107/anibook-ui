@@ -1,0 +1,50 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { withA11y } from '@storybook/addon-a11y';
+import Card from '.';
+
+<Meta title="Components|Card" component={Card}/>
+
+## Card Dark
+
+<Preview>
+  <Story name="Card Dark">
+    <Card
+      backgroundColor="#333"
+      image="https://i.ibb.co/jR4rRqK/oono.png"
+      title="High Score Girl"
+      downColorLayer="#00d2d3"
+      upColorLayer="#2e86de"
+      titleLang="en"
+    />
+  </Story>
+</Preview>
+
+## Card Light
+
+<Preview>
+  <Story name="Card Light">
+    <Card
+      backgroundColor="#a9a9a9"
+      image="https://i.ibb.co/jR4rRqK/oono.png"
+      title="High Score Girl"
+      downColorLayer="#ff1493"
+      upColorLayer="#ffd500"
+      titleLang="en"
+    />
+  </Story>
+</Preview>
+
+## Card With Image Error
+
+<Preview>
+  <Story name="Card With Image Error">
+    <Card
+      backgroundColor="#333"
+      image="https://i.ibb.co/jR4rRqK/oono.webp"
+      title="High Score Girl"
+      downColorLayer="#00d2d3"
+      upColorLayer="#2e86de"
+      titleLang="en"
+    />
+  </Story>
+</Preview>
