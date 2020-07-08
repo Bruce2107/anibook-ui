@@ -25,13 +25,18 @@ interface CarouseCardProps {
 const CarouselCard: FC<CarouseCardProps> = ({
   image,
   title,
-  imageAlt = title,
-  titleLang = 'ja',
+  imageAlt,
+  titleLang,
 }) => {
   return (
     <Container>
-      <Image src={image} alt={imageAlt} onError={imageError} aria-hidden />
-      <Title lang={titleLang}>{title}</Title>
+      <Image
+        src={image}
+        alt={imageAlt || title}
+        onError={imageError}
+        aria-hidden
+      />
+      <Title lang={titleLang || 'ja'}>{title}</Title>
     </Container>
   );
 };

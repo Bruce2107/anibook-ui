@@ -41,18 +41,23 @@ const Card: FC<CardProps> = ({
   title,
   downColorLayer,
   upColorLayer,
-  imageAlt = title,
-  titleLang = 'ja',
+  imageAlt,
+  titleLang,
 }) => {
   return (
     <Container backgroundColor={backgroundColor}>
-      <Image src={image} alt={imageAlt} onError={imageError} aria-hidden />
+      <Image
+        src={image}
+        alt={imageAlt || title}
+        onError={imageError}
+        aria-hidden
+      />
       <Layer
         downColor={downColorLayer}
         upColor={upColorLayer}
         className="layer"
       />
-      <Title lang={titleLang}>{title}</Title>
+      <Title lang={titleLang || 'ja'}>{title}</Title>
     </Container>
   );
 };
