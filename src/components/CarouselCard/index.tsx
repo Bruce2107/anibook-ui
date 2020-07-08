@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Container, Image } from './style';
+import { Container, Image, Title } from './style';
 import imageError from '../../utils/image-error';
 
 interface CarouseCardProps {
@@ -9,7 +9,7 @@ interface CarouseCardProps {
   image: string;
   /**
    * Image alt attribute
-   * @default `title`
+   * @default title
    */
   imageAlt?: string;
   /**
@@ -26,10 +26,12 @@ const CarouselCard: FC<CarouseCardProps> = ({
   image,
   title,
   imageAlt = title,
+  titleLang = 'ja',
 }) => {
   return (
     <Container>
       <Image src={image} alt={imageAlt} onError={imageError} aria-hidden />
+      <Title lang={titleLang}>{title}</Title>
     </Container>
   );
 };

@@ -9,7 +9,7 @@ interface CardProps {
   image: string;
   /**
    * Image alt attribute
-   * @default `title`
+   * @default title
    */
   imageAlt?: string;
   /**

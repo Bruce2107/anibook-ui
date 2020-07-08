@@ -1,9 +1,15 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {
+  Description,
+  Meta,
+  Story,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
 import Card from '.';
 
-<Meta title="Components|Card" component={Card}/>
+<Meta title="Components|Card" component={Card} />
 
-## Card Dark
+### Card Dark
 
 <Preview>
   <Story name="Card Dark">
@@ -18,7 +24,7 @@ import Card from '.';
   </Story>
 </Preview>
 
-## Card Light
+### Card Light
 
 <Preview>
   <Story name="Card Light">
@@ -47,3 +53,7 @@ import Card from '.';
     />
   </Story>
 </Preview>
+
+### Props
+
+<Props of={Card} />

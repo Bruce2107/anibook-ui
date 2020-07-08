@@ -7,6 +7,8 @@ export const Container = styled.div`
   align-items: center;
   overflow: hidden;
   max-width: 1080px;
+  display: flex;
+  position: relative;
   @media (max-width: 1080px) {
     height: 720px;
   }
@@ -28,22 +30,20 @@ export const Image = styled.img`
   position: relative;
 `;
 
-export const Title = styled.a`
+export const Title = styled.p`
   z-index: 2;
-  position: relative;
-  display: flex;
-  bottom: 53px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   padding: 10px;
-  height: 50px;
+  margin: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  font-style: italic;
+  font-size: 1.5rem;
   text-decoration: none;
-  justify-content: center;
   text-align: center;
+  font-style: italic;
   &:hover {
     text-decoration: underline;
   }
