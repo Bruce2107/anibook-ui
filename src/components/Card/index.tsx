@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Container, Image, Layer, Title } from './style';
+import imageError from '../../utils/image-error';
 
 interface CardProps {
   /**
@@ -33,9 +34,6 @@ interface CardProps {
    */
   upColorLayer: string;
 }
-function imageError(event: React.SyntheticEvent<HTMLImageElement, Event>) {
-  event.currentTarget.src = './assets/imageError.png';
-}
 
 const Card: FC<CardProps> = ({
   backgroundColor,
@@ -48,7 +46,7 @@ const Card: FC<CardProps> = ({
 }) => {
   return (
     <Container backgroundColor={backgroundColor}>
-      <Image src={image} alt={imageAlt} onError={imageError} />
+      <Image src={image} alt={imageAlt} onError={imageError} aria-hidden />
       <Layer
         downColor={downColorLayer}
         upColor={upColorLayer}
