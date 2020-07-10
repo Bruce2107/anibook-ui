@@ -2,7 +2,7 @@
   "name": "anibook-ui",
   "version": "1.0.0",
   "description": "Lib com os componentes do Anibook",
-  "main": "dist/lib/index.js",
+  "main": "build/lib/index.js",
   "repository": "https://github.com/Bruce2107/anibook-ui.git",
   "author": {
     "email": "edu.ed322@gmail.com",
