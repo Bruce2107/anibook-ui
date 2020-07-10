@@ -2,7 +2,7 @@
   "name": "anibook-ui",
   "version": "1.0.0",
   "description": "Lib com os componentes do Anibook",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
   "repository": "https://github.com/Bruce2107/anibook-ui.git",
   "author": {
     "email": "edu.ed322@gmail.com",
@@ -17,13 +17,16 @@
     "ui"
   ],
   "scripts": {
+    "prebuild": "rimraf build",
     "build": "tsc",
+    "postbuild": "yarn run copy-files && rimraf node_modules",
     "prepare": "yarn run build",
     "storybook": "start-storybook",
     "prepublishOnly": "yarn test",
     "version": "git add -A src",
     "postpublish": "git push && git push --tags",
-    "test": "jest"
+    "test": "jest",
+    "copy-files": "copyfiles -u 1 ./src/utils/assets/*.png build/lib"
   },
   "bugs": {
     "email": "edu.ed322@gmail.com",
@@ -63,6 +66,7 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@storybook/theming": "^5.3.19",
+    "copyfiles": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",

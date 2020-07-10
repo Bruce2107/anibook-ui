@@ -3,7 +3,7 @@
     "target": "es2017",
     "module": "commonJS",
     "lib": ["dom"],
-    "outDir": "./dist",
+    "outDir": "./build/lib",
     "jsx": "react",
     "removeComments": true,
     "noImplicitAny": true,
@@ -21,6 +21,7 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
+    "sourceMap": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build", "src/**/*.stories.tsx"]
