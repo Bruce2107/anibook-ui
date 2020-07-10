@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Container, Image, Layer, Title } from './style';
+import { Container, Image, Title } from './style';
 import imageError from '../../utils/image-error';
 
-interface CardProps {
+interface CarouseCardProps {
   /**
    * Image path
    */
@@ -21,45 +21,24 @@ interface CardProps {
    * @default ja
    */
   titleLang?: 'en' | 'ja' | 'pt';
-  /**
-   * Background color
-   */
-  backgroundColor: string;
-  /**
-   * Primary layer color
-   */
-  downColorLayer: string;
-  /**
-   * Secondary layer color
-   */
-  upColorLayer: string;
 }
-
-const Card: FC<CardProps> = ({
-  backgroundColor,
+const CarouselCard: FC<CarouseCardProps> = ({
   image,
   title,
-  downColorLayer,
-  upColorLayer,
   imageAlt,
   titleLang,
 }) => {
   return (
-    <Container backgroundColor={backgroundColor}>
+    <Container>
       <Image
         src={image}
         alt={imageAlt || title}
         onError={imageError}
         aria-hidden
       />
-      <Layer
-        downColor={downColorLayer}
-        upColor={upColorLayer}
-        className="layer"
-      />
       <Title lang={titleLang || 'ja'}>{title}</Title>
     </Container>
   );
 };
 
-export default Card;
+export default CarouselCard;

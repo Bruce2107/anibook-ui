@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CarouselCard from '.';
+
+<Meta title="Components|Carousel Card" component={CarouselCard} />
+
+## Normal
+
+<Preview>
+  <Story name="Normal">
+    <CarouselCard
+      image="https://i.ibb.co/jR4rRqK/oono.png"
+      title="High Score Girl"
+    />
+  </Story>
+</Preview>
+
+## With Error
+
+<Preview>
+  <Story name="With Error">
+    <CarouselCard
+      image="https://i.ibb.co/jR4rRqK/oono.webp"
+      title="High Score Girl"
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={CarouselCard} />

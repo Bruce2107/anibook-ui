@@ -69,7 +69,7 @@ export const Title = styled.p`
   position: relative;
   z-index: 2;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   font-weight: bolder;
