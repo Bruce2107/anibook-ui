@@ -55,10 +55,16 @@ export interface TitleProps {
    * @default normal
    */
   fontStyle?: string;
+  /**
+   * Width
+   * @default auto
+   */
+  textWidth?: string;
 }
 
 export const Title = styled.div<TitleProps>`
   cursor: ${({ cursor }) => cursor || 'pointer'};
+  width: ${({ textWidth }) => textWidth || 'auto'};
   font-size: ${({ size }) => size || '1.5rem'};
   font-weight: ${({ weight }) => weight || 'normal'};
   font-family: ${({ fontFamily }) => fontFamily || 'Trebuchet MS'};

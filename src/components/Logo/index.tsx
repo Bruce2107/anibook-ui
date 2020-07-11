@@ -5,7 +5,7 @@ interface LogoProps extends TitleProperties {
   /**
    * Logo text
    */
-  text: string;
+  text?: string;
 }
 const Logo: FC<LogoProps> = ({
   text,
@@ -19,6 +19,7 @@ const Logo: FC<LogoProps> = ({
   isGradient,
   lineHeight,
   size,
+  textWidth,
   weight,
 }) => {
   return (
@@ -33,6 +34,7 @@ const Logo: FC<LogoProps> = ({
       isGradient={isGradient}
       lineHeight={lineHeight}
       size={size}
+      textWidth={textWidth}
       weight={weight}
     >
       {text}
