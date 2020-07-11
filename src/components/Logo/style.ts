@@ -12,35 +12,6 @@ export interface TitleProps {
    */
   colorHover?: string;
   /**
-   * Font size
-   * @default 1.5rem
-   */
-  size?: string;
-  /**
-   * Line height
-   * @default 24px;
-   */
-  lineHeight?: string;
-  /**
-   * Font weight
-   * @default normal
-   */
-  weight?: string;
-  /**
-   * Text as gradient
-   * @default false
-   */
-  isGradient?: boolean;
-  /**
-   * Text gradient
-   */
-  gradient?: string;
-  /**
-   * Text gradient on hover
-   * @default gradient
-   */
-  gradientHover?: string;
-  /**
    * Cursor
    * @default pointer
    */
@@ -56,10 +27,39 @@ export interface TitleProps {
    */
   fontStyle?: string;
   /**
+   * Text gradient
+   */
+  gradient?: string;
+  /**
+   * Text gradient on hover
+   * @default gradient
+   */
+  gradientHover?: string;
+  /**
+   * Text as gradient
+   * @default false
+   */
+  isGradient?: boolean;
+  /**
+   * Line height
+   * @default 24px;
+   */
+  lineHeight?: string;
+  /**
+   * Font size
+   * @default 1.5rem
+   */
+  size?: string;
+  /**
    * Width
    * @default auto
    */
   textWidth?: string;
+  /**
+   * Font weight
+   * @default normal
+   */
+  weight?: string;
 }
 
 export const Title = styled.div<TitleProps>`
