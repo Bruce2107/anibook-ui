@@ -17,6 +17,11 @@ interface CardProps {
    */
   title: string;
   /**
+   * Title color
+   * @default white(#ffffff)
+   */
+  titleColor?: string;
+  /**
    * Language of title
    * @default ja
    */
@@ -43,6 +48,7 @@ const Card: FC<CardProps> = ({
   upColorLayer,
   imageAlt,
   titleLang,
+  titleColor,
 }) => {
   return (
     <Container backgroundColor={backgroundColor}>
@@ -57,7 +63,9 @@ const Card: FC<CardProps> = ({
         upColor={upColorLayer}
         className="layer"
       />
-      <Title lang={titleLang || 'ja'}>{title}</Title>
+      <Title lang={titleLang || 'ja'} color={titleColor}>
+        {title}
+      </Title>
     </Container>
   );
 };

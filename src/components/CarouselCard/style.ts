@@ -30,7 +30,11 @@ export const Image = styled.img`
   position: relative;
 `;
 
-export const Title = styled.p`
+interface TitleProps {
+  color?: string;
+}
+
+export const Title = styled.p<TitleProps>`
   z-index: 2;
   position: absolute;
   bottom: 0;
@@ -39,7 +43,7 @@ export const Title = styled.p`
   margin: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: ${({ color }) => color || '#ffffff'};
   font-size: 1.5rem;
   text-decoration: none;
   text-align: center;

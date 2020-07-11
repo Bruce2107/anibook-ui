@@ -31,11 +31,9 @@ export const IconStyled = styled.div<IconProps>`
   font-size: 1.5rem;
   border: none;
   background: transparent;
-  padding: 0 35px;
   display: flex;
-  svg {
-    margin-top: 0.5em;
-  }
+  justify-content: center;
+  align-items: center;
   &:hover {
     color: ${({ color, colorHover }) => colorHover || color};
     background: ${({ backgroundHover }) => backgroundHover || 'trasparent'};

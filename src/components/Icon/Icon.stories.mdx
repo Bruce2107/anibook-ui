@@ -6,21 +6,26 @@ import Icon from '.';
 
 ## Icon Light
 
-<Preview>
+<Preview mdxSource={`<Icon color="#ff1493" icon={<FaGithubAlt />}/>`}>
   <Story name="Icon Light">
     <div style={{ backgroundColor: '#444' }}>
-      <Icon
-        color="#FF1493"
-        height="50px"
-        icon={<FaGithubAlt />}
-      />
+      <Icon color="#FF1493" icon={<FaGithubAlt />} />
     </div>
   </Story>
 </Preview>
 
 ## Icon Light With Hover
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#ff1493"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+    hoverColor="#00d2d3"
+    hoverBackground="#ffea"
+  />`}
+>
   <Story name="Icon Light With Hover">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
@@ -37,7 +42,14 @@ import Icon from '.';
 
 ## Icon Dark
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#00d2d3"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+  />`}
+>
   <Story name="Icon Dark">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
@@ -52,7 +64,16 @@ import Icon from '.';
 
 ## Icon Dark With Hover
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#00d2d3"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+    hoverColor="#ff1493"
+    hoverBackground="#ffea"
+  />`}
+>
   <Story name="Icon Dark With Hover">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
@@ -69,7 +90,19 @@ import Icon from '.';
 
 ## Icon With OnClick Event
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#00d2d3"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+    hoverColor="#ff1493"
+    hoverBackground="#ffea"
+    onClick={() => {
+      window.open('https://anibook.com.br', '_blank');
+    }}
+  />`}
+>
   <Story name="Icon With OnClick Event">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
