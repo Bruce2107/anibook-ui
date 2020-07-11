@@ -24,11 +24,16 @@ export interface IconProps {
    * @default auto
    */
   width?: string;
+  /**
+   * Font size
+   * @default 24px
+   */
+  size?: string;
 }
 
 export const IconStyled = styled.div<IconProps>`
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: ${({ size }) => size || '24px'};
   border: none;
   background: transparent;
   display: flex;
