@@ -1,11 +1,29 @@
 import styled from 'styled-components';
 
-interface IconProps {
-  height: string;
-  width: string;
+export interface IconProps {
+  /**
+   * Cor de backgroundo do hover effect
+   * @default trasparent
+   */
+  backgroundHover?: string;
+  /**
+   * Cor do ícone
+   */
   color: string;
-  hoverColor: string;
-  hoverBackground: string;
+  /**
+   * Cor do hover effect do ícone
+   */
+  colorHover?: string;
+  /**
+   * Altura do ícone
+   * @default 50px
+   */
+  height?: string;
+  /**
+   * Largura do ícone
+   * @default auto
+   */
+  width?: string;
 }
 
 export const IconStyled = styled.div<IconProps>`
@@ -19,8 +37,8 @@ export const IconStyled = styled.div<IconProps>`
     margin-top: 0.5em;
   }
   &:hover {
-    color: ${({ hoverColor }) => hoverColor};
-    background: ${({ hoverBackground }) => hoverBackground};
+    color: ${({ color, colorHover }) => colorHover || color};
+    background: ${({ backgroundHover }) => backgroundHover || 'trasparent'};
     cursor: pointer;
   }
   height: ${({ height }) => height};
