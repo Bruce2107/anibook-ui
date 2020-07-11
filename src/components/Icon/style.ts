@@ -39,8 +39,8 @@ export const IconStyled = styled.div<IconProps>`
     background: ${({ backgroundHover }) => backgroundHover || 'trasparent'};
     cursor: pointer;
   }
-  height: ${({ height }) => height};
-  width: ${({ width }) => width};
+  height: ${({ height }) => height || '50px'};
+  width: ${({ width }) => width || 'auto'};
   color: ${({ color }) => color};
 `;
 
