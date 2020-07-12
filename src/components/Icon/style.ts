@@ -1,28 +1,51 @@
 import styled from 'styled-components';
 
-interface IconProps {
-  height: string;
-  width: string;
+export interface IconProps {
+  /**
+   * Cor de backgroundo do hover effect
+   * @default trasparent
+   */
+  backgroundHover?: string;
+  /**
+   * Cor do ícone
+   */
   color: string;
-  hoverColor: string;
-  hoverBackground: string;
+  /**
+   * Cor do hover effect do ícone
+   */
+  colorHover?: string;
+  /**
+   * Altura do ícone
+   * @default 50px
+   */
+  height?: string;
+  /**
+   * Largura do ícone
+   * @default auto
+   */
+  width?: string;
+  /**
+   * Font size
+   * @default 24px
+   */
+  size?: string;
 }
 
 export const IconStyled = styled.div<IconProps>`
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: ${({ size }) => size || '24px'};
   border: none;
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   &:hover {
-    color: ${({ hoverColor }) => hoverColor};
-    background: ${({ hoverBackground }) => hoverBackground};
+    color: ${({ color, colorHover }) => colorHover || color};
+    background: ${({ backgroundHover }) => backgroundHover || 'trasparent'};
     cursor: pointer;
   }
-  height: ${({ height }) => height};
-  width: ${({ width }) => width};
+  height: ${({ height }) => height || '50px'};
+  width: ${({ width }) => width || 'auto'};
   color: ${({ color }) => color};
 `;
 

@@ -22,8 +22,8 @@ import Icon from '.';
     icon={<FaGithubAlt />}
     height="50px"
     width="100px"
-    hoverColor="#00d2d3"
-    hoverBackground="#ffea"
+    colorHover="#00d2d3"
+    backgroundHover="#ffea"
   />`}
 >
   <Story name="Icon Light With Hover">
@@ -33,8 +33,8 @@ import Icon from '.';
         height="50px"
         icon={<FaGithubAlt />}
         width="100px"
-        hoverColor="#00D2D3"
-        hoverBackground="#FFEA"
+        colorHover="#00D2D3"
+        backgroundHover="#FFEA"
       />
     </div>
   </Story>
@@ -70,8 +70,8 @@ import Icon from '.';
     icon={<FaGithubAlt />}
     height="50px"
     width="100px"
-    hoverColor="#ff1493"
-    hoverBackground="#ffea"
+    colorHover="#ff1493"
+    backgroundHover="#ffea"
   />`}
 >
   <Story name="Icon Dark With Hover">
@@ -81,8 +81,8 @@ import Icon from '.';
         height="50px"
         icon={<FaGithubAlt />}
         width="100px"
-        hoverColor="#FF1493"
-        hoverBackground="#FFEA"
+        colorHover="#FF1493"
+        backgroundHover="#FFEA"
       />
     </div>
   </Story>
@@ -96,8 +96,9 @@ import Icon from '.';
     icon={<FaGithubAlt />}
     height="50px"
     width="100px"
-    hoverColor="#ff1493"
-    hoverBackground="#ffea"
+    size="20px"
+    colorHover="#ff1493"
+    backgroundHover="#ffea"
     onClick={() => {
       window.open('https://anibook.com.br', '_blank');
     }}
@@ -108,13 +109,12 @@ import Icon from '.';
       <Icon
         color="#00D2D3"
         height="50px"
+        size="20px"
         icon={<FaGithubAlt />}
         width="100px"
-        hoverColor="#FF1493"
-        hoverBackground="#FFEA"
-        onClick={() => {
-          window.open('https://anibook.com.br', '_blank');
-        }}
+        colorHover="#FF1493"
+        backgroundHover="#FFEA"
+        onClick={() => {window.open('https://anibook.com.br', '_blank');}}
       />
     </div>
   </Story>

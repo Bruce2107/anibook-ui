@@ -5,11 +5,26 @@ import CarouselCard from '.';
 
 ## Normal
 
-<Preview>
+<Preview
+  mdxSource={`<CarouselCard
+      image="https://i.ibb.co/jR4rRqK/oono.png"
+      title="High Score Girl"
+      reponsiveSizes={[
+        { screen: '1080px', height: '720px' },
+        { screen: '540px', height: '360px' },
+        { screen: '380px', height: '300px' },
+      ]}
+    />`}
+>
   <Story name="Normal">
     <CarouselCard
       image="https://i.ibb.co/jR4rRqK/oono.png"
       title="High Score Girl"
+      responsiveSizes={[
+        { screen: '1080px', height: '720px' },
+        { screen: '540px', height: '360px' },
+        { screen: '380px', height: '300px' },
+      ]}
     />
   </Story>
 </Preview>

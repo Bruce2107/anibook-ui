@@ -1,20 +1,58 @@
 import styled from 'styled-components';
 
-interface ContainerProps {
+export interface ContainerProps {
+  /**
+   * Background color
+   */
   backgroundColor: string;
+  /**
+   * Height
+   * @default 264px
+   */
+  height?: string;
+  /**
+   * Margin
+   * @default 0 auto
+   */
+  margin?: string;
+  /**
+   * Padding on mobile screen ( <= 770px)
+   * @default 10px
+   */
+  mobilePadding?: string;
+  /**
+   * Width on mobile screen ( <= 770px)
+   * @default 330px
+   */
+  mobileWidth?: string;
+  /**
+   * Padding
+   * @default 20px
+   */
+  padding?: string;
+  /**
+   * Shadow
+   * @default 0 10px 40px rgba(0, 0, 0, 0.8)
+   */
+  shadow?: string;
+  /**
+   * Width
+   * @default 350px
+   */
+  width?: string;
 }
 
 export const Container = styled.figure<ContainerProps>`
   position: relative;
-  width: 350px;
-  height: 264px;
-  margin: 0 auto;
+  width: ${({ width }) => width || '350px'};
+  height: ${({ height }) => height || '264px'};
+  margin: ${({ margin }) => margin || '0 auto'};
   background-color: ${({ backgroundColor }) => backgroundColor};
-  padding: 20px;
+  padding: ${({ padding }) => padding || '20px'};
   box-sizing: border-box;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  box-shadow: ${({ shadow }) => shadow || '0 10px 40px rgba(0, 0, 0, 0.8)'};
   &:hover {
     .layer {
       top: 0;
@@ -24,22 +62,30 @@ export const Container = styled.figure<ContainerProps>`
     }
   }
   @media (max-width: 770px) {
-    padding: 10px;
-    width: 330px;
+    padding: ${({ mobilePadding }) => mobilePadding || '10px'};
+    width: ${({ mobileWidth }) => mobileWidth || '330px'};
   }
 `;
-interface LayerProps {
-  upColor: string;
-  downColor: string;
+
+export interface LayerProps {
+  /**
+   * Primary layer color
+   */
+  downColorLayer: string;
+  /**
+   * Secondary layer color
+   */
+  upColorLayer: string;
 }
+
 export const Layer = styled.div<LayerProps>`
   position: absolute;
   top: calc(100% - 2px);
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ upColor, downColor }) => {
-    return `linear-gradient(${upColor},${downColor})`;
+  background: ${({ upColorLayer, downColorLayer }) => {
+    return `linear-gradient(${upColorLayer},${downColorLayer})`;
   }};
   transition: 0.5s;
   background-color: transparent;
@@ -49,38 +95,100 @@ export const Layer = styled.div<LayerProps>`
   }
 `;
 
-export const Image = styled.img`
+export interface ImageProps {
+  /**
+   * Image height
+   * @default 170px
+   */
+  imageHeight?: string;
+  /**
+   * Image margin
+   * @default 0 0 15px
+   */
+  imageMargin?: string;
+  /**
+   * Image width
+   * @default 302px
+   */
+  imageWidth?: string;
+  /**
+   * Image scale on hover
+   * @default 1.1
+   */
+  imageScale?: number;
+  /**
+   * Image shadow
+   * @default 0 10px 20px rgba(0, 0, 0, 0.4)
+   */
+  imageShadow?: string;
+  /**
+   * Image transition
+   * @default 1s
+   */
+  imageTransition?: string;
+}
+
+export const Image = styled.img<ImageProps>`
   position: relative;
-  height: 170px;
-  width: 302px;
-  margin-bottom: 15px;
+  height: ${({ imageHeight }) => imageHeight || '170px'};
+  width: ${({ imageHeight }) => imageHeight || '302px'};
+  margin: ${({ imageMargin }) => imageMargin || '0 0 15px'};
   cursor: pointer;
   z-index: 2;
-  transition: 1s;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: ${({ imageTransition }) => imageTransition || '1s'};
+  box-shadow: ${({ imageMargin }) =>
+    imageMargin || '0 10px 20px rgba(0, 0, 0, 0.4)'};
   &:hover {
-    transform: scale(1.1);
+    transform: ${({ imageScale }) => `scale(${imageScale}) ` || 'scale(1.1)'};
   }
 `;
 
-interface TitleProps {
+export interface TextProps {
+  /**
+   * Text color
+   * @default white
+   */
   color?: string;
+  /**
+   * Font family
+   * @default Trebuchet MS
+   */
+  fontFamily?: string;
+  /**
+   * Font style
+   * @default nromal
+   */
+  fontStyle?: string;
+  /**
+   * Text marign
+   * @default 0
+   */
+  textMargin?: string;
+  /**
+   * Text padding
+   * @default 0
+   */
+  textPadding?: string;
+  /**
+   * Font size
+   * @default 20px
+   */
+  size?: string;
+  /**
+   * Font weight
+   * @default normal
+   */
+  weight?: string;
 }
-export const Title = styled.p<TitleProps>`
-  margin: 0;
-  padding: 0;
+
+export const Text = styled.p<TextProps>`
+  margin: ${({ textMargin }) => textMargin || 0};
+  padding: ${({ textPadding }) => textPadding || 0};
   position: relative;
   z-index: 2;
   color: ${({ color }) => color || '#ffffff'};
-  font-size: 1.25rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-  font-weight: bolder;
-  font-style: oblique;
-  text-decoration: none;
-  text-transform: capitalize;
-  &:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+  font-size: ${({ size }) => size || '20px'};
+  font-family: ${({ fontFamily }) => fontFamily || 'Trebuchet MS'};
+  font-weight: ${({ weight }) => weight || 'normal'};
+  font-style: ${({ fontStyle }) => fontStyle || 'normal'};
 `;
