@@ -9,7 +9,7 @@ interface NavbarProps extends ContainerProperties {
   /**
    * Navbar logo, render on left side
    */
-  logo: string;
+  logo: Component;
   /**
    * An array with icons or components, render on right side
    */

@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { FaGithubAlt } from 'react-icons/fa';
 import Icon from '../Icon';
+import Logo from '../Logo';
 import Navbar from '.';
 
 <Meta title="Components|Navbar" component={Navbar} />
@@ -9,7 +10,18 @@ import Navbar from '.';
 
 <Preview
   mdxSource={`<Navbar
-      logo="Anibook"
+      logo={
+        <Logo
+          text="Anibook"
+          color="#ff1493"
+          colorHover="#00d2d3"
+          fontStyle="oblique"
+          lineHeight="18px"
+          size="18px"
+          textWidth="100px"
+          weight="bold"
+        />
+      }
       icons={[
         <Icon
           color="#ff1493"
@@ -29,7 +41,18 @@ import Navbar from '.';
 >
   <Story name="Default">
     <Navbar
-      logo="Anibook"
+      logo={
+        <Logo
+          text="Anibook"
+          color="#ff1493"
+          colorHover="#00d2d3"
+          fontStyle="oblique"
+          lineHeight="18px"
+          size="18px"
+          textWidth="100px"
+          weight="bold"
+        />
+      }
       icons={[
         <Icon
           color="#ff1493"
