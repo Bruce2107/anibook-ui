@@ -11,7 +11,6 @@ interface ImageProps extends ContainerProperties {
    */
   ariaHidden?: boolean;
   /**
-   * Image to onError
    * @default src/utils/assets/image-error.png
    */
   onError?: string;

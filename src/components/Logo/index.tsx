@@ -2,9 +2,6 @@ import React, { FC } from 'react';
 import { Title, TitleProps as TitleProperties } from './style';
 
 interface LogoProps extends TitleProperties {
-  /**
-   * Logo text
-   */
   text?: string;
 }
 const Logo: FC<LogoProps> = ({

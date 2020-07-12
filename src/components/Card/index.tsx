@@ -7,18 +7,7 @@ import {
 } from './style';
 
 interface CardProps extends ContainerProperties, LayerProperties {
-  /**
-   * Component with image
-   */
   image: Component;
-  /**
-   * Image alt attribute
-   * @default title
-   */
-  imageAlt?: string;
-  /**
-   * Component with text
-   */
   text: Component;
 }
 
