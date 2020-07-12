@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
-import { Container, Image, Title } from './style';
+import {
+  Container,
+  ContainerProps as ContainerProperties,
+  Image,
+  Title,
+} from './style';
 import imageError from '../../utils/image-error';
 
-interface CarouseCardProps {
+interface CarouseCardProps extends ContainerProperties {
   /**
    * Image path
    */
@@ -33,9 +38,20 @@ const CarouselCard: FC<CarouseCardProps> = ({
   imageAlt,
   titleLang,
   titleColor,
+  height,
+  maxWidth,
+  responsiveSizes,
+  shadow,
+  width,
 }) => {
   return (
-    <Container>
+    <Container
+      height={height}
+      maxWidth={maxWidth}
+      responsiveSizes={responsiveSizes}
+      shadow={shadow}
+      width={width}
+    >
       <Image
         src={image}
         alt={imageAlt || title}

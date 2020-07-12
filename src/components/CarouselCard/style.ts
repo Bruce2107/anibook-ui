@@ -1,26 +1,51 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { mediaQuery } from '../../utils/interfaces';
 
-export const Container = styled.div`
-  height: 500px;
-  width: auto;
-  box-shadow: 0 0 8px #000;
+export interface ContainerProps {
+  /**
+   * Height
+   * @default 500px
+   */
+  height?: string;
+  /**
+   * Max width
+   * @default 1080px
+   */
+  maxWidth?: string;
+  /**
+   * Array with responsive sizes
+   */
+  responsiveSizes?: mediaQuery[];
+  /**
+   * Card shadow
+   * @default 0 0 8px #000000
+   */
+  shadow?: string;
+  /**
+   * Width
+   * @default auto
+   */
+  width?: string;
+}
+export const Container = styled.div<ContainerProps>`
   align-items: center;
-  overflow: hidden;
-  max-width: 1080px;
   display: flex;
   position: relative;
-  @media (max-width: 1080px) {
-    height: 720px;
-  }
-  @media (max-width: 760px) {
-    height: 480px;
-  }
-  @media (max-width: 540px) {
-    height: 360px;
-  }
-  @media (max-width: 380px) {
-    height: 300px;
-  }
+  overflow: hidden;
+  height: ${({ height }) => height || '500px'};
+  width: ${({ width }) => width || 'auto'};
+  box-shadow: ${({ shadow }) => shadow || '0 0 8px #000'};
+  max-width: ${({ maxWidth }) => maxWidth || '1080px'};
+  ${({ responsiveSizes }) =>
+    responsiveSizes &&
+    responsiveSizes.map(
+      (media) => css`
+        @media (max-width: ${media.screen}) {
+          height: ${media.height || 'auto'};
+          width: ${media.width || 'auto'};
+        }
+      `
+    )}
 `;
 
 export const Image = styled.img`
