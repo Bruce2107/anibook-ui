@@ -1,33 +1,21 @@
-import React, { FC } from 'react';
+import React, { FC, Component } from 'react';
 import {
   Container,
   ContainerProps as ContainerProperties,
-  Image,
   Title,
 } from './style';
-import imageError from '../../utils/image-error';
 
 interface CarouseCardProps extends ContainerProperties {
   /**
-   * Image path
+   * Component with image
    */
-  image: string;
-  /**
-   * Image alt attribute
-   * @default title
-   */
-  imageAlt?: string;
-  /**
-   * Title of card
-   */
+  image: Component;
   title: string;
   /**
-   * Title color
-   * @default white(#ffffff)
+   * @default white
    */
   titleColor?: string;
   /**
-   * Language of title
    * @default ja
    */
   titleLang?: 'en' | 'ja' | 'pt';
@@ -35,7 +23,6 @@ interface CarouseCardProps extends ContainerProperties {
 const CarouselCard: FC<CarouseCardProps> = ({
   image,
   title,
-  imageAlt,
   titleLang,
   titleColor,
   height,
@@ -52,12 +39,7 @@ const CarouselCard: FC<CarouseCardProps> = ({
       shadow={shadow}
       width={width}
     >
-      <Image
-        src={image}
-        alt={imageAlt || title}
-        onError={imageError}
-        aria-hidden
-      />
+      {image}
       <Title lang={titleLang || 'ja'} color={titleColor}>
         {title}
       </Title>

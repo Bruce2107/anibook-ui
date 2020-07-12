@@ -95,54 +95,6 @@ export const Layer = styled.div<LayerProps>`
   }
 `;
 
-export interface ImageProps {
-  /**
-   * Image height
-   * @default 170px
-   */
-  imageHeight?: string;
-  /**
-   * Image margin
-   * @default 0 0 15px
-   */
-  imageMargin?: string;
-  /**
-   * Image width
-   * @default 302px
-   */
-  imageWidth?: string;
-  /**
-   * Image scale on hover
-   * @default 1.1
-   */
-  imageScale?: number;
-  /**
-   * Image shadow
-   * @default 0 10px 20px rgba(0, 0, 0, 0.4)
-   */
-  imageShadow?: string;
-  /**
-   * Image transition
-   * @default 1s
-   */
-  imageTransition?: string;
-}
-
-export const Image = styled.img<ImageProps>`
-  position: relative;
-  height: ${({ imageHeight }) => imageHeight || '170px'};
-  width: ${({ imageHeight }) => imageHeight || '302px'};
-  margin: ${({ imageMargin }) => imageMargin || '0 0 15px'};
-  cursor: pointer;
-  z-index: 2;
-  transition: ${({ imageTransition }) => imageTransition || '1s'};
-  box-shadow: ${({ imageMargin }) =>
-    imageMargin || '0 10px 20px rgba(0, 0, 0, 0.4)'};
-  &:hover {
-    transform: ${({ imageScale }) => `scale(${imageScale}) ` || 'scale(1.1)'};
-  }
-`;
-
 export interface TextProps {
   /**
    * Text color
@@ -156,7 +108,7 @@ export interface TextProps {
   fontFamily?: string;
   /**
    * Font style
-   * @default nromal
+   * @default normal
    */
   fontStyle?: string;
   /**
