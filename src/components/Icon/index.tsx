@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, Component } from 'react';
 import { IconStyled } from './style';
 
-interface Props {
+export interface Props {
   /**
    * Ícone a ser exibido
    */

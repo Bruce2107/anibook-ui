@@ -63,12 +63,15 @@ export const Image = styled.img`
   }
 `;
 
-export const Title = styled.p`
+interface TitleProps {
+  color?: string;
+}
+export const Title = styled.p<TitleProps>`
   margin: 0;
   padding: 0;
   position: relative;
   z-index: 2;
-  color: #ffffff;
+  color: ${({ color }) => color || '#ffffff'};
   font-size: 1.25rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;

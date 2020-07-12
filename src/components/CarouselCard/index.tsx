@@ -17,6 +17,11 @@ interface CarouseCardProps {
    */
   title: string;
   /**
+   * Title color
+   * @default white(#ffffff)
+   */
+  titleColor?: string;
+  /**
    * Language of title
    * @default ja
    */
@@ -27,6 +32,7 @@ const CarouselCard: FC<CarouseCardProps> = ({
   title,
   imageAlt,
   titleLang,
+  titleColor,
 }) => {
   return (
     <Container>
@@ -36,7 +42,9 @@ const CarouselCard: FC<CarouseCardProps> = ({
         onError={imageError}
         aria-hidden
       />
-      <Title lang={titleLang || 'ja'}>{title}</Title>
+      <Title lang={titleLang || 'ja'} color={titleColor}>
+        {title}
+      </Title>
     </Container>
   );
 };
