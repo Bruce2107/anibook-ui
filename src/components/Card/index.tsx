@@ -1,8 +1,21 @@
 import React, { FC } from 'react';
-import { Container, Image, Layer, Title } from './style';
+import {
+  Container,
+  ContainerProps as ContainerProperties,
+  Image,
+  ImageProps as ImageProperties,
+  Layer,
+  LayerProps as LayerProperties,
+  Text,
+  TextProps as TextProperties,
+} from './style';
 import imageError from '../../utils/image-error';
 
-interface CardProps {
+interface CardProps
+  extends ContainerProperties,
+    LayerProperties,
+    ImageProperties,
+    TextProperties {
   /**
    * Image path
    */
@@ -17,55 +30,81 @@ interface CardProps {
    */
   title: string;
   /**
-   * Title color
-   * @default white(#ffffff)
-   */
-  titleColor?: string;
-  /**
    * Language of title
    * @default ja
    */
   titleLang?: 'en' | 'ja' | 'pt';
-  /**
-   * Background color
-   */
-  backgroundColor: string;
-  /**
-   * Primary layer color
-   */
-  downColorLayer: string;
-  /**
-   * Secondary layer color
-   */
-  upColorLayer: string;
 }
 
 const Card: FC<CardProps> = ({
   backgroundColor,
+  downColorLayer,
   image,
   title,
-  downColorLayer,
   upColorLayer,
+  color,
+  fontFamily,
+  fontStyle,
+  height,
   imageAlt,
+  imageHeight,
+  imageMargin,
+  imageScale,
+  imageShadow,
+  imageTransition,
+  imageWidth,
+  margin,
+  mobilePadding,
+  mobileWidth,
+  padding,
+  shadow,
+  size,
+  textMargin,
+  textPadding,
   titleLang,
-  titleColor,
+  weight,
+  width,
 }) => {
   return (
-    <Container backgroundColor={backgroundColor}>
+    <Container
+      backgroundColor={backgroundColor}
+      height={height}
+      margin={margin}
+      mobilePadding={mobilePadding}
+      mobileWidth={mobileWidth}
+      padding={padding}
+      shadow={shadow}
+      width={width}
+    >
       <Image
         src={image}
         alt={imageAlt || title}
+        imageHeight={imageHeight}
+        imageMargin={imageMargin}
+        imageScale={imageScale}
+        imageShadow={imageShadow}
+        imageTransition={imageTransition}
+        imageWidth={imageWidth}
         onError={imageError}
         aria-hidden
       />
       <Layer
-        downColor={downColorLayer}
-        upColor={upColorLayer}
+        downColorLayer={downColorLayer}
+        upColorLayer={upColorLayer}
         className="layer"
       />
-      <Title lang={titleLang || 'ja'} color={titleColor}>
+      <Text
+        lang={titleLang || 'ja'}
+        color={color}
+        fontFamily={fontFamily}
+        fontStyle={fontStyle}
+        size={size}
+        textMargin={textMargin}
+        textPadding={textPadding}
+        weight={weight}
+      >
         {title}
-      </Title>
+      </Text>
     </Container>
   );
 };
