@@ -1,25 +1,21 @@
-import React, { FC } from 'react';
+import React, { FC, Component } from 'react';
 import {
   Container,
   ContainerProps as ContainerProperties,
-  Image,
-  ImageProps as ImageProperties,
   Layer,
   LayerProps as LayerProperties,
   Text,
   TextProps as TextProperties,
 } from './style';
-import imageError from '../../utils/image-error';
 
 interface CardProps
   extends ContainerProperties,
     LayerProperties,
-    ImageProperties,
     TextProperties {
   /**
-   * Image path
+   * Component with image
    */
-  image: string;
+  image: Component;
   /**
    * Image alt attribute
    * @default title
@@ -46,13 +42,6 @@ const Card: FC<CardProps> = ({
   fontFamily,
   fontStyle,
   height,
-  imageAlt,
-  imageHeight,
-  imageMargin,
-  imageScale,
-  imageShadow,
-  imageTransition,
-  imageWidth,
   margin,
   mobilePadding,
   mobileWidth,
@@ -76,18 +65,7 @@ const Card: FC<CardProps> = ({
       shadow={shadow}
       width={width}
     >
-      <Image
-        src={image}
-        alt={imageAlt || title}
-        imageHeight={imageHeight}
-        imageMargin={imageMargin}
-        imageScale={imageScale}
-        imageShadow={imageShadow}
-        imageTransition={imageTransition}
-        imageWidth={imageWidth}
-        onError={imageError}
-        aria-hidden
-      />
+      {image}
       <Layer
         downColorLayer={downColorLayer}
         upColorLayer={upColorLayer}

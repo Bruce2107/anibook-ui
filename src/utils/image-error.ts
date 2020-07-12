@@ -1,7 +1,6 @@
-import _image from './assets/imageError.png';
-
 export default function imageError(
-  event: React.SyntheticEvent<HTMLImageElement, Event>
+  event: React.SyntheticEvent<HTMLImageElement, Event>,
+  image: string
 ): void {
-  event.currentTarget.src = _image;
+  event.currentTarget.src = image;
 }

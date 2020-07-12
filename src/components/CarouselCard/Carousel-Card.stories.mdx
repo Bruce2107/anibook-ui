@@ -1,24 +1,23 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Image from '../Image';
 import CarouselCard from '.';
 
 <Meta title="Components|Carousel Card" component={CarouselCard} />
 
 ## Normal
 
-<Preview
-  mdxSource={`<CarouselCard
-      image="https://i.ibb.co/jR4rRqK/oono.png"
-      title="High Score Girl"
-      reponsiveSizes={[
-        { screen: '1080px', height: '720px' },
-        { screen: '540px', height: '360px' },
-        { screen: '380px', height: '300px' },
-      ]}
-    />`}
->
+<Preview>
   <Story name="Normal">
     <CarouselCard
-      image="https://i.ibb.co/jR4rRqK/oono.png"
+      image={
+        <Image
+          alt="High Score Girl"
+          src="https://i.ibb.co/jR4rRqK/oono.png"
+          height="100%"
+          width="100%"
+          zIndex={1}
+        />
+      }
       title="High Score Girl"
       responsiveSizes={[
         { screen: '1080px', height: '720px' },
@@ -34,7 +33,15 @@ import CarouselCard from '.';
 <Preview>
   <Story name="With Error">
     <CarouselCard
-      image="https://i.ibb.co/jR4rRqK/oono.webp"
+      image={
+        <Image
+          alt="High Score Girl"
+          src="https://i.ibb.co/jR4rRqK/oono.webp"
+          height="100%"
+          width="100%"
+          zIndex={1}
+        />
+      }
       title="High Score Girl"
       titleColor="#DDD"
     />
