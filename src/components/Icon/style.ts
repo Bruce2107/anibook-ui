@@ -2,30 +2,20 @@ import styled from 'styled-components';
 
 export interface IconProps {
   /**
-   * Cor de backgroundo do hover effect
    * @default trasparent
    */
   backgroundHover?: string;
-  /**
-   * Cor do ícone
-   */
   color: string;
-  /**
-   * Cor do hover effect do ícone
-   */
   colorHover?: string;
   /**
-   * Altura do ícone
    * @default 50px
    */
   height?: string;
   /**
-   * Largura do ícone
    * @default auto
    */
   width?: string;
   /**
-   * Font size
    * @default 24px
    */
   size?: string;

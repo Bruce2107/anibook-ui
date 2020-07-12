@@ -7,11 +7,11 @@ import {
 
 interface NavbarProps extends ContainerProperties {
   /**
-   * Navbar logo, render on left side
+   * Render on left
    */
   logo: Component;
   /**
-   * An array with icons or components, render on right side
+   * Render on right
    */
   icons?: Array<Component>;
 }

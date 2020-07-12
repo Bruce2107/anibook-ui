@@ -2,31 +2,23 @@ import styled from 'styled-components';
 
 export interface ContainerProps {
   /**
-   * Navbar height
    * @default 50px
    */
   height?: string;
-  /**
-   * Navbar background color
-   */
   bgColor: string;
   /**
-   * Navbar opacity
    * @default 0.9
    */
   opacity?: number;
   /**
-   * Navbar padding
    * @default 0 20px
    */
   padding?: string;
   /**
-   * Navbar shadow
    * @default 0 10px 10px rgba(0, 0, 0, 0.4)
    */
   shadow?: string;
   /**
-   * Navbar justify-content
    * @default space-between
    */
   jtc?:
@@ -48,7 +40,6 @@ export interface ContainerProps {
     | 'initial'
     | 'unset';
   /**
-   * Navbar diplay
    * @default flex
    */
   display?:
@@ -83,7 +74,6 @@ export interface ContainerProps {
     | 'inline-flex'
     | 'inline-grid';
   /**
-   * Navbar align-items
    * @default center
    */
   ali?:

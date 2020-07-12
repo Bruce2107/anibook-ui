@@ -1,30 +1,19 @@
 import React, { FC, Component } from 'react';
-import {
-  Container,
-  ContainerProps as ContainerProperties,
-  Title,
-} from './style';
+import { Container, ContainerProps as ContainerProperties } from './style';
 
 interface CarouseCardProps extends ContainerProperties {
   /**
    * Component with image
    */
   image: Component;
-  title: string;
   /**
-   * @default white
+   * Component with text
    */
-  titleColor?: string;
-  /**
-   * @default ja
-   */
-  titleLang?: 'en' | 'ja' | 'pt';
+  text: Component;
 }
 const CarouselCard: FC<CarouseCardProps> = ({
   image,
-  title,
-  titleLang,
-  titleColor,
+  text,
   height,
   maxWidth,
   responsiveSizes,
@@ -40,9 +29,7 @@ const CarouselCard: FC<CarouseCardProps> = ({
       width={width}
     >
       {image}
-      <Title lang={titleLang || 'ja'} color={titleColor}>
-        {title}
-      </Title>
+      {text}
     </Container>
   );
 };

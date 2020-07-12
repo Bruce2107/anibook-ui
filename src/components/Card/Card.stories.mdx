@@ -6,6 +6,7 @@ import {
   Props,
 } from '@storybook/addon-docs/blocks';
 import Image from '../Image';
+import Text from '../Text';
 import Card from '.';
 
 <Meta title="Components|Card" component={Card} />
@@ -28,11 +29,24 @@ import Card from '.';
           zIndex={2}
         />
       }
-      title="High Score Girl"
+      text={
+        <Text
+          text="High Score Girl"
+          props={[
+            { name: 'position', value: 'relative' },
+            { name: 'color', value: '#ffffff' },
+            { name: 'font-family', value: 'Trebuchet MS' },
+            { name: 'font-weight', value: 'bolder' },
+            { name: 'font-style', value: 'oblique' },
+            { name: 'text-transform', value: 'capitalize' },
+            { name: 'z-index', value: '2' },
+            { name: 'font-size', value: '1.5rem' },
+            { name: 'margin', value: '0' },
+          ]}
+        />
+      }
       downColorLayer="#00d2d3"
       upColorLayer="#2e86de"
-      titleLang="en"
-      titleColor="#DDD"
     />`}
 >
   <Story name="Card Dark">
@@ -51,11 +65,24 @@ import Card from '.';
           zIndex={2}
         />
       }
-      title="High Score Girl"
+      text={
+        <Text
+          text="High Score Girl"
+          props={[
+            { name: 'position', value: 'relative' },
+            { name: 'color', value: '#ffffff' },
+            { name: 'font-family', value: 'Trebuchet MS' },
+            { name: 'font-weight', value: 'bolder' },
+            { name: 'font-style', value: 'oblique' },
+            { name: 'text-transform', value: 'capitalize' },
+            { name: 'z-index', value: '2' },
+            { name: 'font-size', value: '1.5rem' },
+            { name: 'margin', value: '0' },
+          ]}
+        />
+      }
       downColorLayer="#00d2d3"
       upColorLayer="#2e86de"
-      titleLang="en"
-      titleColor="#DDD"
     />
   </Story>
 </Preview>
@@ -78,10 +105,24 @@ import Card from '.';
           zIndex={2}
         />
       }
-      title="High Score Girl"
+      text={
+        <Text
+          text="High Score Girl"
+          props={[
+            { name: 'position', value: 'relative' },
+            { name: 'color', value: '#ffffff' },
+            { name: 'font-family', value: 'Trebuchet MS' },
+            { name: 'font-weight', value: 'bolder' },
+            { name: 'font-style', value: 'oblique' },
+            { name: 'text-transform', value: 'capitalize' },
+            { name: 'z-index', value: '2' },
+            { name: 'font-size', value: '1.5rem' },
+            { name: 'margin', value: '0' },
+          ]}
+        />
+      }
       downColorLayer="#ff1493"
       upColorLayer="#ffd500"
-      titleLang="en"
     />`}
 >
   <Story name="Card Light">
@@ -100,10 +141,24 @@ import Card from '.';
           zIndex={2}
         />
       }
-      title="High Score Girl"
+      text={
+        <Text
+          text="High Score Girl"
+          props={[
+            { name: 'position', value: 'relative' },
+            { name: 'color', value: '#ffffff' },
+            { name: 'font-family', value: 'Trebuchet MS' },
+            { name: 'font-weight', value: 'bolder' },
+            { name: 'font-style', value: 'oblique' },
+            { name: 'text-transform', value: 'capitalize' },
+            { name: 'z-index', value: '2' },
+            { name: 'font-size', value: '1.5rem' },
+            { name: 'margin', value: '0' },
+          ]}
+        />
+      }
       downColorLayer="#ff1493"
       upColorLayer="#ffd500"
-      titleLang="en"
     />
   </Story>
 </Preview>
@@ -116,7 +171,7 @@ import Card from '.';
       image={
         <Image
           alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
+          src="https://i.ibb.co/jR4rRqK/oono.webp"
           height="170px"
           margin="0 0 15px"
           width="302px"
@@ -126,10 +181,24 @@ import Card from '.';
           zIndex={2}
         />
       }
-      title="High Score Girl"
+      text={
+        <Text
+          text="High Score Girl"
+          props={[
+            { name: 'position', value: 'relative' },
+            { name: 'color', value: '#ffffff' },
+            { name: 'font-family', value: 'Trebuchet MS' },
+            { name: 'font-weight', value: 'bolder' },
+            { name: 'font-style', value: 'oblique' },
+            { name: 'text-transform', value: 'capitalize' },
+            { name: 'z-index', value: '2' },
+            { name: 'font-size', value: '1.5rem' },
+            { name: 'margin', value: '0' },
+          ]}
+        />
+      }
       downColorLayer="#00d2d3"
       upColorLayer="#2e86de"
-      titleLang="en"
     />`}
 >
   <Story name="Card With Image Error">
@@ -138,7 +207,7 @@ import Card from '.';
       image={
         <Image
           alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
+          src="https://i.ibb.co/jR4rRqK/oono.webp"
           height="170px"
           margin="0 0 15px"
           width="302px"
@@ -148,10 +217,24 @@ import Card from '.';
           zIndex={2}
         />
       }
-      title="High Score Girl"
+      text={
+        <Text
+          text="High Score Girl"
+          props={[
+            { name: 'position', value: 'relative' },
+            { name: 'color', value: '#ffffff' },
+            { name: 'font-family', value: 'Trebuchet MS' },
+            { name: 'font-weight', value: 'bolder' },
+            { name: 'font-style', value: 'oblique' },
+            { name: 'text-transform', value: 'capitalize' },
+            { name: 'z-index', value: '2' },
+            { name: 'font-size', value: '1.5rem' },
+            { name: 'margin', value: '0' },
+          ]}
+        />
+      }
       downColorLayer="#00d2d3"
       upColorLayer="#2e86de"
-      titleLang="en"
     />
   </Story>
 </Preview>
