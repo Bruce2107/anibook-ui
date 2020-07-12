@@ -1,0 +1,69 @@
+import {
+  Description,
+  Meta,
+  Story,
+  Preview,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import Logo from '.';
+
+<Meta title="Components|Logo" component={Logo} />
+
+## Default
+
+<Preview>
+  <Story name="Default">
+    <Logo text="Anibook" />
+  </Story>
+</Preview>
+
+## With gradient
+
+<Preview
+  mdxSource={`<Logo
+      text="Anibook"
+      isGradient={true}
+      gradient="-webkit-linear-gradient(90deg, #ffd500, #ff1493)"
+      gradientHover="-webkit-linear-gradient(90deg, #00d2d3, #2e86de)"
+    />`}
+>
+  <Story name="With gradient">
+    <Logo
+      text="Anibook"
+      isGradient={true}
+      gradient="-webkit-linear-gradient(90deg, #ffd500, #ff1493)"
+      gradientHover="-webkit-linear-gradient(90deg, #00d2d3, #2e86de)"
+    />
+  </Story>
+</Preview>
+
+## With color
+
+<Preview
+  mdxSource={`<Logo
+      text="Anibook"
+      color="#ffd500"
+      colorHover="#00d2d3"
+      fontStyle="oblique"
+      lineHeight="18px"
+      size="18px"
+      weight="bold"
+    />`}
+>
+  <Story name="With color">
+    <Logo
+      text="Anibook"
+      color="#ffd500"
+      colorHover="#00d2d3"
+      fontStyle="oblique"
+      lineHeight="18px"
+      size="18px"
+      textWidth="100px"
+      weight="bold"
+    />
+  </Story>
+</Preview>
+
+### Props
+
+<Props of={Logo} />
