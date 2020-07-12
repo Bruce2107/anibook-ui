@@ -4,14 +4,9 @@ import {
   ContainerProps as ContainerProperties,
   Layer,
   LayerProps as LayerProperties,
-  Text,
-  TextProps as TextProperties,
 } from './style';
 
-interface CardProps
-  extends ContainerProperties,
-    LayerProperties,
-    TextProperties {
+interface CardProps extends ContainerProperties, LayerProperties {
   /**
    * Component with image
    */
@@ -22,36 +17,23 @@ interface CardProps
    */
   imageAlt?: string;
   /**
-   * Title of card
+   * Component with text
    */
-  title: string;
-  /**
-   * Language of title
-   * @default ja
-   */
-  titleLang?: 'en' | 'ja' | 'pt';
+  text: Component;
 }
 
 const Card: FC<CardProps> = ({
   backgroundColor,
   downColorLayer,
   image,
-  title,
+  text,
   upColorLayer,
-  color,
-  fontFamily,
-  fontStyle,
   height,
   margin,
   mobilePadding,
   mobileWidth,
   padding,
   shadow,
-  size,
-  textMargin,
-  textPadding,
-  titleLang,
-  weight,
   width,
 }) => {
   return (
@@ -71,18 +53,7 @@ const Card: FC<CardProps> = ({
         upColorLayer={upColorLayer}
         className="layer"
       />
-      <Text
-        lang={titleLang || 'ja'}
-        color={color}
-        fontFamily={fontFamily}
-        fontStyle={fontStyle}
-        size={size}
-        textMargin={textMargin}
-        textPadding={textPadding}
-        weight={weight}
-      >
-        {title}
-      </Text>
+      {text}
     </Container>
   );
 };

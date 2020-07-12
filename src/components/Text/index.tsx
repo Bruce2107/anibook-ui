@@ -7,10 +7,11 @@ interface TextProps extends StyledTextProperties {
    * @default p
    */
   as?: undefined;
+  lang?: string;
 }
-const Text: FC<TextProps> = ({ as, text, props }) => {
+const Text: FC<TextProps> = ({ as, text, props, lang }) => {
   return (
-    <StyledText props={props} as={as || 'p'}>
+    <StyledText props={props} as={as || 'p'} lang={lang}>
       {text}
     </StyledText>
   );
