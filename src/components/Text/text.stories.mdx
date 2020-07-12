@@ -1,0 +1,34 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Text from '.';
+
+<Meta title="Components|Text" component={Text} />
+
+### Default
+
+<Preview>
+  <Story name="Default">
+    <Text text="text" />
+  </Story>
+</Preview>
+
+### Title
+
+<Preview>
+  <Story name="Title">
+    <div className="underline">
+      <Text text="text" props={[
+        {name: 'margin', value: '0'},
+        {name: 'padding', value: '0'},
+        {name: 'position', value: 'relative'},
+        {name: 'z-index', value: '2'},
+        {name: 'color', value: '#fff'},
+        {name: 'font-family', value: 'Trebuchet MS'},
+        {name: 'font-size', value: '24px'},
+        {name: 'font-weight', value: 'bold'},
+        {name: 'font-style', value: 'oblique'}
+      ]}/>
+    </div>
+  </Story>
+</Preview>
+
+<Props of={Text} />
