@@ -7,7 +7,7 @@ interface ImageProps extends ContainerProperties {
   src: string;
   alt: string;
   /**
-   * @default true
+   * @default false
    */
   ariaHidden?: boolean;
   /**
