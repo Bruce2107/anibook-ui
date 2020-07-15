@@ -1,60 +1,48 @@
-import React, { FC } from 'react';
-import { Container, Image, Layer, Title } from './style';
+import React, { FC, Component } from 'react';
+import {
+  Container,
+  ContainerProps as ContainerProperties,
+  Layer,
+  LayerProps as LayerProperties,
+} from './style';
 
-interface CardProps {
-  /**
-   * Image path
-   */
-  image: string;
-  /**
-   * Image alt attribute
-   * @default `title`
-   */
-  imageAlt?: string;
-  /**
-   * Title of card
-   */
-  title: string;
-  /**
-   * Language of title
-   * @default ja
-   */
-  titleLang?: 'en' | 'ja' | 'pt';
-  /**
-   * Background color
-   */
-  backgroundColor: string;
-  /**
-   * Primary layer color
-   */
-  downColorLayer: string;
-  /**
-   * Secondary layer color
-   */
-  upColorLayer: string;
-}
-function imageError(event: React.SyntheticEvent<HTMLImageElement, Event>) {
-  event.currentTarget.src = './assets/imageError.png';
+interface CardProps extends ContainerProperties, LayerProperties {
+  image: Component;
+  text: Component;
 }
 
 const Card: FC<CardProps> = ({
   backgroundColor,
-  image,
-  title,
   downColorLayer,
+  image,
+  text,
   upColorLayer,
-  imageAlt = title,
-  titleLang = 'ja',
+  height,
+  margin,
+  mobilePadding,
+  mobileWidth,
+  padding,
+  shadow,
+  width,
 }) => {
   return (
-    <Container backgroundColor={backgroundColor}>
-      <Image src={image} alt={imageAlt} onError={imageError} />
+    <Container
+      backgroundColor={backgroundColor}
+      height={height}
+      margin={margin}
+      mobilePadding={mobilePadding}
+      mobileWidth={mobileWidth}
+      padding={padding}
+      shadow={shadow}
+      width={width}
+    >
+      {image}
       <Layer
-        downColor={downColorLayer}
-        upColor={upColorLayer}
+        downColorLayer={downColorLayer}
+        upColorLayer={upColorLayer}
         className="layer"
       />
-      <Title lang={titleLang}>{title}</Title>
+      {text}
     </Container>
   );
 };

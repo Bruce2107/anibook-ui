@@ -1,0 +1,65 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Image from '.';
+
+<Meta title="Atom|Image" component={Image} />
+
+## Image
+
+<Preview
+  mdxSource={`<Image
+      alt="High Score Girl"
+      src="https://i.ibb.co/jR4rRqK/oono.png"
+      height="170px"
+      margin="0 0 15px"
+      width="302px"
+      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+      transform="scale(1.1)"
+      transition="1s"
+    />`}
+>
+  <Story name="Image">
+    <Image
+      alt="High Score Girl"
+      src="https://i.ibb.co/jR4rRqK/oono.png"
+      height="170px"
+      margin="0 0 15px"
+      width="302px"
+      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+      transform="scale(1.1)"
+      transition="1s"
+    />
+  </Story>
+</Preview>
+
+## Image with error
+
+<Preview
+  mdxSource={`<Image
+      alt="High Score Girl"
+      src="https://i.ibb.co/jR4rRqK/oono.webp"
+      height="170px"
+      margin="0 0 15px"
+      width="302px"
+      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+      transform="scale(1.1)"
+      transition="1s"
+    />`}
+>
+  <Story name="Image with error">
+    <Image
+      alt="High Score Girl"
+      src="https://i.ibb.co/jR4rRqK/oono.webp"
+      height="170px"
+      margin="0 0 15px"
+      width="302px"
+      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+      transform="scale(1.1)"
+      transition="1s"
+    />
+  </Story>
+</Preview>
+
+
+## Props
+
+<Props of={Image} />

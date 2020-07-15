@@ -1,27 +1,31 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { withA11y } from '@storybook/addon-a11y';
 import { FaGithubAlt } from 'react-icons/fa';
 import Icon from '.';
 
-<Meta title="Components|Icon" component={Icon} />
+<Meta title="Atom|Icon" component={Icon} />
 
 ## Icon Light
 
-<Preview>
+<Preview mdxSource={`<Icon color="#ff1493" icon={<FaGithubAlt />}/>`}>
   <Story name="Icon Light">
     <div style={{ backgroundColor: '#444' }}>
-      <Icon
-        color="#FF1493"
-        height="50px"
-        icon={<FaGithubAlt />}
-      />
+      <Icon color="#FF1493" icon={<FaGithubAlt />} />
     </div>
   </Story>
 </Preview>
 
 ## Icon Light With Hover
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#ff1493"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+    colorHover="#00d2d3"
+    backgroundHover="#ffea"
+  />`}
+>
   <Story name="Icon Light With Hover">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
@@ -29,8 +33,8 @@ import Icon from '.';
         height="50px"
         icon={<FaGithubAlt />}
         width="100px"
-        hoverColor="#00D2D3"
-        hoverBackground="#FFEA"
+        colorHover="#00D2D3"
+        backgroundHover="#FFEA"
       />
     </div>
   </Story>
@@ -38,7 +42,14 @@ import Icon from '.';
 
 ## Icon Dark
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#00d2d3"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+  />`}
+>
   <Story name="Icon Dark">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
@@ -53,7 +64,16 @@ import Icon from '.';
 
 ## Icon Dark With Hover
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#00d2d3"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+    colorHover="#ff1493"
+    backgroundHover="#ffea"
+  />`}
+>
   <Story name="Icon Dark With Hover">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
@@ -61,8 +81,8 @@ import Icon from '.';
         height="50px"
         icon={<FaGithubAlt />}
         width="100px"
-        hoverColor="#FF1493"
-        hoverBackground="#FFEA"
+        colorHover="#FF1493"
+        backgroundHover="#FFEA"
       />
     </div>
   </Story>
@@ -70,16 +90,30 @@ import Icon from '.';
 
 ## Icon With OnClick Event
 
-<Preview>
+<Preview
+  mdxSource={`<Icon
+    color="#00d2d3"
+    icon={<FaGithubAlt />}
+    height="50px"
+    width="100px"
+    size="20px"
+    colorHover="#ff1493"
+    backgroundHover="#ffea"
+    onClick={() => {
+      window.open('https://anibook.com.br', '_blank');
+    }}
+  />`}
+>
   <Story name="Icon With OnClick Event">
     <div style={{ backgroundColor: '#444' }}>
       <Icon
         color="#00D2D3"
         height="50px"
+        size="20px"
         icon={<FaGithubAlt />}
         width="100px"
-        hoverColor="#FF1493"
-        hoverBackground="#FFEA"
+        colorHover="#FF1493"
+        backgroundHover="#FFEA"
         onClick={() => {window.open('https://anibook.com.br', '_blank');}}
       />
     </div>

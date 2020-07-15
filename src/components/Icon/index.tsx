@@ -1,55 +1,30 @@
 import React, { FC, ReactNode, Component } from 'react';
-import { IconStyled } from './style';
+import { IconStyled, IconProps as IconProperties } from './style';
 
-interface Props {
-  /**
-   * Ícone a ser exibido
-   */
+interface Props extends IconProperties {
   icon: ReactNode | Component;
-  /**
-   * Cor do ícone
-   */
-  color: string;
-  /**
-   * Cor do hover effect do ícone
-   */
-  hoverColor?: string;
-  /**
-   * Cor de backgroundo do hover effect
-   * @default trasparent
-   */
-  hoverBackground?: string;
-  /**
-   * Altura do ícone
-   * @default 50px
-   */
-  height?: string;
-  /**
-   * Largura do ícone
-   * @default auto
-   */
-  width?: string;
-  /**
-   * Função do onClick
-   */
   onClick?: () => void;
 }
 const Icon: FC<Props> = ({
   color,
-  height = '50px',
   icon,
-  width = 'auto',
-  hoverColor = color,
-  hoverBackground = 'trasparent',
+  backgroundHover,
+  height,
+  width,
+  colorHover,
+  size,
+  cursor,
   onClick,
 }) => {
   return (
     <IconStyled
       color={color}
       height={height}
-      hoverBackground={hoverBackground}
-      hoverColor={hoverColor}
+      backgroundHover={backgroundHover}
+      colorHover={colorHover}
       width={width}
+      size={size}
+      cursor={cursor}
       onClick={onClick}
     >
       {icon}

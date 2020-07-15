@@ -1,30 +1,45 @@
 import styled from 'styled-components';
 
-interface IconProps {
-  height: string;
-  width: string;
+export interface IconProps {
+  /**
+   * @default trasparent
+   */
+  backgroundHover?: string;
   color: string;
-  hoverColor: string;
-  hoverBackground: string;
+  colorHover?: string;
+  /**
+   * @default 50px
+   */
+  height?: string;
+  /**
+   * @default auto
+   */
+  width?: string;
+  /**
+   * @default 24px
+   */
+  size?: string;
+  /**
+   * @default pointer
+   */
+  cursor?: string;
 }
 
 export const IconStyled = styled.div<IconProps>`
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: ${({ size }) => size || '24px'};
   border: none;
   background: transparent;
-  padding: 0 35px;
   display: flex;
-  svg {
-    margin-top: 0.5em;
-  }
+  justify-content: center;
+  align-items: center;
+  cursor: ${({ cursor }) => cursor || 'pointer'};
   &:hover {
-    color: ${({ hoverColor }) => hoverColor};
-    background: ${({ hoverBackground }) => hoverBackground};
-    cursor: pointer;
+    color: ${({ color, colorHover }) => colorHover || color};
+    background: ${({ backgroundHover }) => backgroundHover || 'trasparent'};
   }
-  height: ${({ height }) => height};
-  width: ${({ width }) => width};
+  height: ${({ height }) => height || '50px'};
+  width: ${({ width }) => width || 'auto'};
   color: ${({ color }) => color};
 `;
 
