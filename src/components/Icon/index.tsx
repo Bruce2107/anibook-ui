@@ -13,6 +13,7 @@ const Icon: FC<Props> = ({
   width,
   colorHover,
   size,
+  cursor,
   onClick,
 }) => {
   return (
@@ -23,6 +24,7 @@ const Icon: FC<Props> = ({
       colorHover={colorHover}
       width={width}
       size={size}
+      cursor={cursor}
       onClick={onClick}
     >
       {icon}
