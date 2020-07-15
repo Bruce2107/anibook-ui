@@ -21,7 +21,6 @@
     "build": "tsc",
     "postbuild": "yarn run copy-files && rimraf node_modules",
     "storybook": "start-storybook",
-    "prepublishOnly": "yarn test",
     "version": "git add -A src",
     "postpublish": "git push && git push --tags",
     "test": "jest",
