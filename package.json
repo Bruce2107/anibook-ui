@@ -20,6 +20,7 @@
     "prebuild": "rimraf build",
     "build": "tsc",
     "postbuild": "yarn run copy-files && rimraf node_modules",
+    "prepare": "yarn run build",
     "storybook": "start-storybook",
     "version": "git add -A src",
     "postpublish": "git push && git push --tags",
