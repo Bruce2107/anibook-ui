@@ -9,7 +9,7 @@ interface NavbarProps extends ContainerProperties {
   /**
    * Render on left
    */
-  logo: Component;
+  logo?: Component;
   /**
    * Render on right
    */
@@ -38,7 +38,7 @@ const Navbar: FC<NavbarProps> = ({
       display={display}
       ali={ali}
     >
-      {logo}
+      {logo && logo}
       {icons && <List>{icons}</List>}
     </Container>
   );
