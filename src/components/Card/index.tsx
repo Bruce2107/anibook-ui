@@ -1,4 +1,4 @@
-import React, { FC, Component } from 'react';
+import React, { FC, ReactNode } from 'react';
 import {
   Container,
   ContainerProps as ContainerProperties,
@@ -7,8 +7,8 @@ import {
 } from './style';
 
 interface CardProps extends ContainerProperties, LayerProperties {
-  image: Component;
-  text: Component;
+  image: ReactNode;
+  text: ReactNode;
 }
 
 const Card: FC<CardProps> = ({

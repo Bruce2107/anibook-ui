@@ -1,4 +1,4 @@
-import React, { FC, Component } from 'react';
+import React, { FC, ReactNode } from 'react';
 import {
   Container,
   ContainerProps as ContainerProperties,
@@ -9,11 +9,11 @@ interface NavbarProps extends ContainerProperties {
   /**
    * Render on left
    */
-  logo?: Component;
+  logo?: ReactNode;
   /**
    * Render on right
    */
-  icons?: Array<Component>;
+  icons?: Array<ReactNode>;
 }
 const Navbar: FC<NavbarProps> = ({
   logo,

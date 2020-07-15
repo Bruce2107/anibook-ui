@@ -19,7 +19,7 @@
   "scripts": {
     "prebuild": "rimraf build",
     "build": "tsc",
-    "postbuild": "yarn run copy-files && rimraf node_modules",
+    "postbuild": "yarn run copy-files",
     "prepare": "yarn run build",
     "storybook": "start-storybook",
     "version": "git add -A src",
