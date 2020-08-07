@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, Image, Text } from '..';
+
+<Meta title="Guia|Instalação" />
+
+## Visão geral
+
+Biblioteca com os componentes em React para seguindo o desing do [Anibook](htpps://anibook.com.br).
+
+### Requisitos
+
+- [Node.js](https://nodejs.org/en/)
+
+### Instalação
+
+Instalação com Yarn ou Npm:
+
+```bash
+  yarn add anibook-ui
+```
+
+```bash
+  npm install anibook-ui
+```
+
+<Card
+  backgroundColor="#333"
+  image={
+    <Image
+      alt="High Score Girl"
+      src="https://i.ibb.co/jR4rRqK/oono.png"
+      height="170px"
+      margin="0 0 15px"
+      width="302px"
+      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+      transform="scale(1.1)"
+      transition="1s"
+      zIndex={2}
+    />
+  }
+  text={
+    <Text
+      text="High Score Girl"
+      props={[
+        { name: 'position', value: 'relative' },
+        { name: 'color', value: '#ffffff' },
+        { name: 'font-family', value: 'Trebuchet MS' },
+        { name: 'font-weight', value: 'bolder' },
+        { name: 'font-style', value: 'oblique' },
+        { name: 'text-transform', value: 'capitalize' },
+        { name: 'z-index', value: '2' },
+        { name: 'font-size', value: '1.5rem' },
+        { name: 'margin', value: '0' },
+      ]}
+    />
+  }
+  downColorLayer="#00d2d3"
+  upColorLayer="#2e86de"
+/>
+
+### Licenças
+
+[MIT](https://github.com/Bruce2107/anibook-ui/blob/master/LICENSE)

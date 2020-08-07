@@ -1,8 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { IconStyled, IconProps as IconProperties } from './style';
 
 interface Props extends IconProperties {
-  icon: ReactNode;
+  icon: ReactElement;
   onClick?: () => void;
 }
 const Icon: FC<Props> = ({
