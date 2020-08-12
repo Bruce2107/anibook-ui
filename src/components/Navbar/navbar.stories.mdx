@@ -1,14 +1,14 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { FaGithubAlt } from 'react-icons/fa';
 import Icon from '../Icon';
 import Logo from '../Logo';
 import Navbar from '.';
 
-<Meta title="Molecule|Navbar" component={Navbar} />
+<Meta title="Molecule/Navbar" component={Navbar} />
 
 ### Default
 
-<Preview
+<Canvas
   mdxSource={`<Navbar
       logo={
         <Logo
@@ -70,11 +70,11 @@ import Navbar from '.';
       bgColor="#ffea00"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Custom
 
-<Preview
+<Canvas
   mdxSource={`<Navbar
       logo="Anibook"
       icons={[
@@ -121,11 +121,11 @@ import Navbar from '.';
       padding="0"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Without logo
 
-<Preview
+<Canvas
   mdxSource={`<Navbar
       icons={[
         <Icon
@@ -199,8 +199,8 @@ import Navbar from '.';
       bgColor="#ffea00"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={Navbar} />
+<ArgsTable of={Navbar} />

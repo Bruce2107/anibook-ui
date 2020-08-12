@@ -2,24 +2,38 @@ import {
   Description,
   Meta,
   Story,
-  Preview,
-  Props,
+  Canvas,
+  ArgsTable,
 } from '@storybook/addon-docs/blocks';
 import Logo from '.';
 
-<Meta title="Atom|Logo" component={Logo} />
+<Meta
+  title="Atom/Logo"
+  component={Logo}
+  argTypes={{
+    text: {
+      control: 'text',
+    },
+    color: {
+      control: 'color',
+    },
+    colorHover: {
+      control: 'color',
+    },
+  }}
+/>
 
 ## Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Logo text="Anibook" />
   </Story>
-</Preview>
+</Canvas>
 
 ## With gradient
 
-<Preview
+<Canvas
   mdxSource={`<Logo
       text="Anibook"
       isGradient={true}
@@ -35,11 +49,11 @@ import Logo from '.';
       gradientHover="-webkit-linear-gradient(90deg, #00d2d3, #2e86de)"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With color
 
-<Preview
+<Canvas
   mdxSource={`<Logo
       text="Anibook"
       color="#ffd500"
@@ -62,8 +76,23 @@ import Logo from '.';
       weight="bold"
     />
   </Story>
-</Preview>
+</Canvas>
+
+export const Template = (args) => <Logo {...args} />;
+
+### Control
+
+<Story
+  name="Control"
+  args={{
+    text: 'Anibook',
+    color: '#ffd500',
+    colorHover: '#00d2d3',
+  }}
+>
+  {Template.bind({})}
+</Story>
 
 ### Props
 
-<Props of={Logo} />
+<ArgsTable of={Logo} />

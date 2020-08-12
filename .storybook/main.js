@@ -1,26 +1,18 @@
-const { resolve } = require('path');
-
 module.exports = {
-  stories: ['../src/components/**/*.stories.(tsx|mdx)'],
+  stories: ['../src/**/**/*.stories.@(tsx|mdx)'],
   addons: [
-    '@storybook/addon-viewport/register',
-    '@storybook/addon-a11y/register',
-    '@storybook/addon-docs/preset',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+    '@storybook/addon-essentials',
   ],
-  webpackFinal: async (config) => {
-    config.module.rules.push({
-      test: /\.tsx?$/,
-      use: [
-        require.resolve('ts-loader'),
-        {
-          loader: require.resolve('react-docgen-typescript-loader'),
-          options: {
-            tsconfigPath: resolve(__dirname, '../tsconfig.json'),
-          },
-        },
-      ],
-    });
-    config.resolve.extensions.push('.ts', '.tsx');
-    return config;
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+    },
   },
 };

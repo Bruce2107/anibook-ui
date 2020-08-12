@@ -1,11 +1,11 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Image from '.';
 
-<Meta title="Atom|Image" component={Image} />
+<Meta title="Atom/Image" component={Image} />
 
 ## Image
 
-<Preview
+<Canvas
   mdxSource={`<Image
       alt="High Score Girl"
       src="https://i.ibb.co/jR4rRqK/oono.png"
@@ -29,14 +29,14 @@ import Image from '.';
       transition="1s"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Image with error
 
-<Preview
+<Canvas
   mdxSource={`<Image
       alt="High Score Girl"
-      src="https://i.ibb.co/jR4rRqK/oono.webp"
+      src="https://i.ibb.co/jR4rRqK/oono.webpa"
       height="170px"
       margin="0 0 15px"
       width="302px"
@@ -48,7 +48,7 @@ import Image from '.';
   <Story name="Image with error">
     <Image
       alt="High Score Girl"
-      src="https://i.ibb.co/jR4rRqK/oono.webp"
+      src="https://i.ibb.co/jR4rRqK/oono.webpa"
       height="170px"
       margin="0 0 15px"
       width="302px"
@@ -57,9 +57,8 @@ import Image from '.';
       transition="1s"
     />
   </Story>
-</Preview>
-
+</Canvas>
 
 ## Props
 
-<Props of={Image} />
+<ArgsTable of={Image} />

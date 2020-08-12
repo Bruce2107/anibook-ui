@@ -2,18 +2,18 @@ import {
   Description,
   Meta,
   Story,
-  Preview,
-  Props,
+  Canvas,
+  ArgsTable,
 } from '@storybook/addon-docs/blocks';
 import Image from '../Image';
 import Text from '../Text';
 import Card from '.';
 
-<Meta title="Molecule|Card" component={Card} />
+<Meta title="Molecule/Card" component={Card} />
 
 ### Card Dark
 
-<Preview
+<Canvas
   mdxSource={`<Card
       backgroundColor="#333"
       image={
@@ -85,11 +85,11 @@ import Card from '.';
       upColorLayer="#2e86de"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Card Light
 
-<Preview
+<Canvas
   mdxSource={`<Card
       backgroundColor="#a9a9a9"
       image={
@@ -161,11 +161,11 @@ import Card from '.';
       upColorLayer="#ffd500"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Card With Image Error
 
-<Preview
+<Canvas
   mdxSource={`<Card
       backgroundColor="#333"
       image={
@@ -237,8 +237,8 @@ import Card from '.';
       upColorLayer="#2e86de"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Props
 
-<Props of={Card} />
+<ArgsTable of={Card} />

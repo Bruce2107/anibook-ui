@@ -1,13 +1,13 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { FaGithubAlt } from 'react-icons/fa';
 import Icon from '../Icon';
 import Sidebar from '.';
 
-<Meta title="Molecule|Sidebar" component={Sidebar} />
+<Meta title="Molecule/Sidebar" component={Sidebar} />
 
 ### Default
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Sidebar
       bgColor="#ffea00"
@@ -98,8 +98,8 @@ import Sidebar from '.';
       opacity={0.8}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={Sidebar} />
+<ArgsTable of={Sidebar} />

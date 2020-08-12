@@ -1,13 +1,13 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Image from '../Image';
 import Text from '../Text';
 import CarouselCard from '.';
 
-<Meta title="Molecule|Carousel Card" component={CarouselCard} />
+<Meta title="Molecule/Carousel Card" component={CarouselCard} />
 
 ## Normal
 
-<Preview>
+<Canvas>
   <Story name="Normal">
     <CarouselCard
       image={
@@ -46,11 +46,11 @@ import CarouselCard from '.';
       ]}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## With Error
 
-<Preview>
+<Canvas>
   <Story name="With Error">
     <CarouselCard
       image={
@@ -84,8 +84,8 @@ import CarouselCard from '.';
       }
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={CarouselCard} />
+<ArgsTable of={CarouselCard} />
