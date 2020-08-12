@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf build",
-    "build": "build-storybook -c .storybook -o build",
+    "build": "tsc",
     "postbuild": "yarn run copy-files",
     "prepare": "yarn run build",
     "storybook": "start-storybook",
