@@ -1,15 +1,15 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { Container, ContainerProps as ContainerProperties } from './style';
 
 interface CarouseCardProps extends ContainerProperties {
   /**
    * Component with image
    */
-  image: ReactNode;
+  image: ReactElement;
   /**
    * Component with text
    */
-  text: ReactNode;
+  text: ReactElement | string;
 }
 const CarouselCard: FC<CarouseCardProps> = ({
   image,
