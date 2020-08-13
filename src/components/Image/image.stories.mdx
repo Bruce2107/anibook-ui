@@ -54,6 +54,18 @@ export const imageProps = {
   transition: '1s',
 };
 
+export const ImageComponent = (
+  <Image {...imageProps} src="https://i.ibb.co/jR4rRqK/oono.png" />
+);
+
+export const ImageErrorComponent = (
+  <Image
+    {...imageProps}
+    src="https://i.ibb.co/jR4rRqK/oono"
+    onError={imageError}
+  />
+);
+
 ## Image
 
 <Canvas

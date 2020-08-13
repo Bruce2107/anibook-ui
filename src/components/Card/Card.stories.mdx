@@ -8,8 +8,10 @@ import {
 import Image from '../Image';
 import Text from '../Text';
 import Card from '.';
-import { imageProps } from '../Image/image.stories.mdx';
-import imageError from '../../utils/assets/imageError.png';
+import {
+  ImageComponent,
+  ImageErrorComponent,
+} from '../Image/image.stories.mdx';
 
 <Meta
   title="Molecule/Card"
@@ -55,9 +57,7 @@ import imageError from '../../utils/assets/imageError.png';
 />
 
 export const CardTemplate = (args) => <Card {...args} />;
-export const ImageTemplate = (
-  <Image {...imageProps} src="https://i.ibb.co/jR4rRqK/oono.png" />
-);
+
 export const TextTemplate = (
   <Text
     text="High Score Girl"
@@ -72,14 +72,6 @@ export const TextTemplate = (
       { name: 'font-size', value: '1.5rem' },
       { name: 'margin', value: '0' },
     ]}
-  />
-);
-
-export const ImageErrorTemplate = (
-  <Image
-    {...imageProps}
-    src="https://i.ibb.co/jR4rRqK/oono"
-    onError={imageError}
   />
 );
 
@@ -124,7 +116,7 @@ export const ImageErrorTemplate = (
   <Story
     name="Default"
     args={{
-      image: ImageTemplate,
+      image: ImageComponent,
       backgroundColor: '#333',
       text: TextTemplate,
       downColorLayer: '#00d2d3',
@@ -176,7 +168,7 @@ export const ImageErrorTemplate = (
   <Story
     name="Card Light"
     args={{
-      image: ImageTemplate,
+      image: ImageComponent,
       backgroundColor: '#a9a9a9',
       text: TextTemplate,
       downColorLayer: '#ff1493',
@@ -229,7 +221,7 @@ export const ImageErrorTemplate = (
     name="Card With Image Error"
     name="Card Light"
     args={{
-      image: ImageErrorTemplate,
+      image: ImageErrorComponent,
       backgroundColor: '#a9a9a9',
       text: TextTemplate,
       downColorLayer: '#ff1493',
