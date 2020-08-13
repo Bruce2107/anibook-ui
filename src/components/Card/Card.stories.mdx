@@ -8,6 +8,8 @@ import {
 import Image from '../Image';
 import Text from '../Text';
 import Card from '.';
+import { imageProps } from '../Image/image.stories.mdx';
+import imageError from '../../utils/assets/imageError.png';
 
 <Meta
   title="Molecule/Card"
@@ -54,17 +56,7 @@ import Card from '.';
 
 export const CardTemplate = (args) => <Card {...args} />;
 export const ImageTemplate = (
-  <Image
-    alt="High Score Girl"
-    src="https://i.ibb.co/jR4rRqK/oono.png"
-    height="170px"
-    margin="0 0 15px"
-    width="302px"
-    shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-    transform="scale(1.1)"
-    transition="1s"
-    zIndex={2}
-  />
+  <Image {...imageProps} src="https://i.ibb.co/jR4rRqK/oono.png" />
 );
 export const TextTemplate = (
   <Text
@@ -80,6 +72,14 @@ export const TextTemplate = (
       { name: 'font-size', value: '1.5rem' },
       { name: 'margin', value: '0' },
     ]}
+  />
+);
+
+export const ImageErrorTemplate = (
+  <Image
+    {...imageProps}
+    src="https://i.ibb.co/jR4rRqK/oono"
+    onError={imageError}
   />
 );
 
@@ -173,41 +173,17 @@ export const TextTemplate = (
     upColorLayer="#ffd500"
   />`}
 >
-  <Story name="Card Light">
-    <Card
-      backgroundColor="#a9a9a9"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#ff1493"
-      upColorLayer="#ffd500"
-    />
+  <Story
+    name="Card Light"
+    args={{
+      image: ImageTemplate,
+      backgroundColor: '#a9a9a9',
+      text: TextTemplate,
+      downColorLayer: '#ff1493',
+      upColorLayer: '#ffd500',
+    }}
+  >
+    {CardTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -219,7 +195,7 @@ export const TextTemplate = (
       image={
         <Image
           alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.webp"
+          src="https://i.ibb.co/jR4rRqK/oono"
           height="170px"
           margin="0 0 15px"
           width="302px"
@@ -249,41 +225,18 @@ export const TextTemplate = (
       upColorLayer="#2e86de"
     />`}
 >
-  <Story name="Card With Image Error">
-    <Card
-      backgroundColor="#333"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.webp"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#00d2d3"
-      upColorLayer="#2e86de"
-    />
+  <Story
+    name="Card With Image Error"
+    name="Card Light"
+    args={{
+      image: ImageErrorTemplate,
+      backgroundColor: '#a9a9a9',
+      text: TextTemplate,
+      downColorLayer: '#ff1493',
+      upColorLayer: '#ffd500',
+    }}
+  >
+    {CardTemplate.bind({})}
   </Story>
 </Canvas>
 

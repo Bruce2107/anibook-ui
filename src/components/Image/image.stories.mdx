@@ -1,7 +1,58 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Image from '.';
+import imageError from '../../utils/assets/imageError.png';
 
-<Meta title="Atom/Image" component={Image} />
+<Meta
+  title="Atom/Image"
+  component={Image}
+  argTypes={{
+    src: {
+      control: 'text',
+    },
+    alt: {
+      control: 'text',
+    },
+    height: {
+      control: 'text',
+    },
+    onError: {
+      control: 'text',
+    },
+    margin: {
+      control: 'text',
+    },
+    position: {
+      control: 'text',
+    },
+    transform: {
+      control: 'text',
+    },
+    transition: {
+      control: 'text',
+    },
+    shadow: {
+      control: 'text',
+    },
+    width: {
+      control: 'text',
+    },
+    zIndex: {
+      control: 'text',
+    },
+  }}
+/>
+
+export const ImageTemplate = (args) => <Image {...args} />;
+
+export const imageProps = {
+  alt: 'High Score Girl',
+  height: '170px',
+  margin: '0 0 15px',
+  width: '302px',
+  shadow: '0 10px 20px rgba(0, 0, 0, 0.4)',
+  transform: 'scale(1.1)',
+  transition: '1s',
+};
 
 ## Image
 
@@ -17,17 +68,14 @@ import Image from '.';
       transition="1s"
     />`}
 >
-  <Story name="Image">
-    <Image
-      alt="High Score Girl"
-      src="https://i.ibb.co/jR4rRqK/oono.png"
-      height="170px"
-      margin="0 0 15px"
-      width="302px"
-      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-      transform="scale(1.1)"
-      transition="1s"
-    />
+  <Story
+    name="Image"
+    args={{
+      ...imageProps,
+      src: 'https://i.ibb.co/jR4rRqK/oono.png',
+    }}
+  >
+    {ImageTemplate.bind({})}
   </Story>
 </Canvas>
 
@@ -45,17 +93,15 @@ import Image from '.';
       transition="1s"
     />`}
 >
-  <Story name="Image with error">
-    <Image
-      alt="High Score Girl"
-      src="https://i.ibb.co/jR4rRqK/oono.webpa"
-      height="170px"
-      margin="0 0 15px"
-      width="302px"
-      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-      transform="scale(1.1)"
-      transition="1s"
-    />
+  <Story
+    name="Image with error"
+    args={{
+      ...imageProps,
+      src: 'https://i.ibb.co/jR4rRqK/oono.webpa',
+      onError: imageError,
+    }}
+  >
+    {ImageTemplate.bind({})}
   </Story>
 </Canvas>
 
