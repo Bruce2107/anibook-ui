@@ -20,78 +20,59 @@ import Logo from '.';
     colorHover: {
       control: 'color',
     },
+    cursor: {
+      control: 'text',
+    },
+    fontFamily: {
+      control: 'text',
+    },
+    fontStyle: {
+      control: 'text',
+    },
+    gradient: {
+      control: 'text',
+    },
+    gradientHover: {
+      control: 'text',
+    },
+    isGradient: {
+      control: 'boolean',
+    },
+    lineHeight: {
+      control: 'text',
+    },
+    size: {
+      control: 'text',
+    },
+    textWidth: {
+      control: 'text',
+    },
+    weight: {
+      control: 'text',
+    },
   }}
 />
 
-## Default
-
-<Canvas>
-  <Story name="Default">
-    <Logo text="Anibook" />
-  </Story>
-</Canvas>
-
-## With gradient
-
-<Canvas
-  mdxSource={`<Logo
-      text="Anibook"
-      isGradient={true}
-      gradient="-webkit-linear-gradient(90deg, #ffd500, #ff1493)"
-      gradientHover="-webkit-linear-gradient(90deg, #00d2d3, #2e86de)"
-    />`}
->
-  <Story name="With gradient">
-    <Logo
-      text="Anibook"
-      isGradient={true}
-      gradient="-webkit-linear-gradient(90deg, #ffd500, #ff1493)"
-      gradientHover="-webkit-linear-gradient(90deg, #00d2d3, #2e86de)"
-    />
-  </Story>
-</Canvas>
-
-## With color
-
-<Canvas
-  mdxSource={`<Logo
-      text="Anibook"
-      color="#ffd500"
-      colorHover="#00d2d3"
-      fontStyle="oblique"
-      lineHeight="18px"
-      size="18px"
-      weight="bold"
-    />`}
->
-  <Story name="With color">
-    <Logo
-      text="Anibook"
-      color="#ffd500"
-      colorHover="#00d2d3"
-      fontStyle="oblique"
-      lineHeight="18px"
-      size="18px"
-      textWidth="100px"
-      weight="bold"
-    />
-  </Story>
-</Canvas>
-
-export const Template = (args) => <Logo {...args} />;
+export const LogoTemplate = (args) => <Logo {...args} />;
 
 ### Control
 
-<Story
-  name="Control"
-  args={{
-    text: 'Anibook',
-    color: '#ffd500',
-    colorHover: '#00d2d3',
-  }}
+<Canvas
+  mdxSource={`<Logo text="Anibook" color="#FFD500" colorHover="#00D2D3" />`}
 >
-  {Template.bind({})}
-</Story>
+  <Story
+    name="Default"
+    args={{
+      text: 'Anibook',
+      color: '#ffd500',
+      colorHover: '#00d2d3',
+      gradient: '-webkit-linear-gradient(90deg, #ffd500, #ff1493)',
+      gradientHover: '-webkit-linear-gradient(90deg, #00d2d3, #2e86de)',
+    }}
+  >
+    {LogoTemplate.bind({})}
+  </Story>
+</Canvas>
 
 ### Props
 
