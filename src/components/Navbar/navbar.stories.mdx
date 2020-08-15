@@ -4,7 +4,111 @@ import Icon from '../Icon';
 import Logo from '../Logo';
 import Navbar from '.';
 
-<Meta title="Molecule/Navbar" component={Navbar} />
+<Meta
+  title="Molecule/Navbar"
+  component={Navbar}
+  argTypes={{
+    height: {
+      control: 'text',
+    },
+    bgColor: {
+      control: 'color',
+    },
+    opacity: {
+      control: 'number',
+    },
+    padding: {
+      control: 'text',
+    },
+    shadow: {
+      control: 'text',
+    },
+    jtc: {
+      control: {
+        type: 'select',
+        options: [
+          'inherit',
+          'initial',
+          'unset',
+          'center',
+          'start',
+          'end',
+          'flex-start',
+          'flex-end',
+          'left',
+          'right',
+          'normal',
+          'space-between',
+          'space-around',
+          'space-evenly',
+          'stretch',
+          'safe center',
+          'unsafe center',
+        ],
+      },
+    },
+    display: {
+      control: {
+        type: 'select',
+        options: [
+          'block',
+          'inline',
+          'run-in',
+          'flow',
+          'flow-root',
+          'table',
+          'flex',
+          'grid',
+          'ruby',
+          'flow list-item',
+          'flow-root list-item',
+          'table-row-group',
+          'table-header-group',
+          'table-footer-group',
+          'table-row',
+          'table-cell',
+          'table-column-group',
+          'table-column',
+          'table-caption',
+          'ruby-base',
+          'ruby-text',
+          'ruby-base-container',
+          'ruby-text-container',
+          'contents',
+          'none',
+          'inline-block',
+          'inline-list-item',
+          'inline-table',
+          'inline-flex',
+          'inline-grid',
+        ],
+      },
+    },
+    ali: {
+      control: {
+        type: 'select',
+        options: [
+          'baseline',
+          'center',
+          'flex-end',
+          'flex-start',
+          'inherit',
+          'initial',
+          'unset',
+          'stretch',
+        ],
+      },
+    },
+    logo: {
+      control: 'string',
+    },
+    icons: {
+      control: 'string',
+    },
+  }}
+/>
+
+export const NavbarTemplate = (args) => <Navbar {...args} />;
 
 ### Default
 
@@ -39,9 +143,10 @@ import Navbar from '.';
       bgColor="#ffea00"
     />`}
 >
-  <Story name="Default">
-    <Navbar
-      logo={
+  <Story
+    name="Default"
+    args={{
+      logo: (
         <Logo
           text="Anibook"
           color="#ff1493"
@@ -52,8 +157,8 @@ import Navbar from '.';
           textWidth="100px"
           weight="bold"
         />
-      }
-      icons={[
+      ),
+      icons: [
         <Icon
           color="#ff1493"
           icon={<FaGithubAlt />}
@@ -66,138 +171,11 @@ import Navbar from '.';
           backgroundHover="#ffea"
           width="100px"
         />,
-      ]}
-      bgColor="#ffea00"
-    />
-  </Story>
-</Canvas>
-
-### Custom
-
-<Canvas
-  mdxSource={`<Navbar
-      logo="Anibook"
-      icons={[
-        <Icon
-          color="#00d2d3"
-          icon={<FaGithubAlt />}
-          width="100px"
-          backgroundHover="#ffea"
-        />,
-        <Icon
-          color="#00d2d3"
-          icon={<FaGithubAlt />}
-          width="100px"
-          backgroundHover="#ffea"
-        />,
-      ]}
-      bgColor="#333333"
-      height="100px"
-      opacity={0.5}
-      padding="0"
-    />`}
->
-  <Story name="Custom">
-    <Navbar
-      logo="Anibook"
-      icons={[
-        <Icon
-          color="#00d2d3"
-          icon={<FaGithubAlt />}
-          width="100px"
-          backgroundHover="#ffea"
-          size="50px"
-        />,
-        <Icon
-          color="#00d2d3"
-          icon={<FaGithubAlt />}
-          width="100px"
-          backgroundHover="#ffea"
-        />,
-      ]}
-      bgColor="#333333"
-      height="100px"
-      opacity={0.5}
-      padding="0"
-    />
-  </Story>
-</Canvas>
-
-### Without logo
-
-<Canvas
-  mdxSource={`<Navbar
-      icons={[
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-      ]}
-      bgColor="#ffea00"
-    />`}
->
-  <Story name="Without logo">
-    <Navbar
-      icons={[
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-        <Icon
-          color="#ff1493"
-          icon={<FaGithubAlt />}
-          backgroundHover="#ffea"
-          width="100px"
-        />,
-      ]}
-      bgColor="#ffea00"
-    />
+      ],
+      bgColor: '#ffea00',
+    }}
+  >
+    {NavbarTemplate.bind({})}
   </Story>
 </Canvas>
 
