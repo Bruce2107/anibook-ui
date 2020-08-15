@@ -1,8 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { StyledText, StyledTextProps as StyledTextProperties } from './style';
 
 interface TextProps extends StyledTextProperties {
-  text: ReactNode;
+  text: ReactElement | string;
   /**
    * @default p
    */

@@ -1,91 +1,250 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Image from '../Image';
 import Text from '../Text';
 import CarouselCard from '.';
 
-<Meta title="Molecule|Carousel Card" component={CarouselCard} />
+<Meta
+  title="Molecule/Carousel Card"
+  component={CarouselCard}
+  argTypes={{
+    height: {
+      control: 'text',
+    },
+    maxWidth: {
+      control: 'text',
+    },
+    responsiveSizes: {
+      control: 'array',
+    },
+    shadow: {
+      control: 'text',
+    },
+    width: {
+      control: 'text',
+    },
+    image: {
+      control: 'string',
+    },
+    text: {
+      control: 'string',
+    },
+  }}
+/>
+
+export const CarouselCardTemplate = (args) => <CarouselCard {...args} />;
+
+export const TextTemplate = (
+  <Text
+    text="High Score Girl"
+    props={[
+      { name: 'position', value: 'absolute' },
+      { name: 'color', value: '#ffffff' },
+      { name: 'text-transform', value: 'capitalize' },
+      { name: 'z-index', value: '2' },
+      { name: 'font-size', value: '1.5rem' },
+      { name: 'font-style', value: 'italic' },
+      { name: 'margin', value: '0' },
+      { name: 'bottom', value: '0' },
+      { name: 'left', value: '0' },
+      { name: 'padding', value: '10px' },
+      { name: 'width', value: '100%' },
+      { name: 'text-align', value: 'center' },
+      { name: 'background', value: 'rgba(0, 0, 0, 0.5)' },
+    ]}
+  />
+);
+
+export const responsiveSizes = [
+  {
+    screen: '1080px',
+    height: '450px',
+    width: '720px',
+  },
+  {
+    screen: '760px',
+    height: '300px',
+    width: '480px',
+  },
+  {
+    screen: '540px',
+    height: '200px',
+    width: '360px',
+  },
+  {
+    screen: '380px',
+    height: '150px',
+    width: '300px',
+  },
+];
+
+export const ImageTemplate = (
+  <Image
+    alt="High Score Girl"
+    src="https://i.ibb.co/jR4rRqK/oono.webp"
+    height="100%"
+    width="100%"
+    zIndex={1}
+  />
+);
+
+export const ImageErrorTemplate = (
+  <Image
+    alt="High Score Girl"
+    src="https://i.ibb.co/jR4rRqK/oono.webpa"
+    height="100%"
+    width="100%"
+    zIndex={1}
+  />
+);
+
+> OBS: O MDX não reconhe o símbolo % então ele foi escrito (percent)
 
 ## Normal
 
-<Preview>
-  <Story name="Normal">
-    <CarouselCard
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
-          height="100%"
-          width="100%"
-          zIndex={1}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'absolute' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'font-style', value: 'italic' },
-            { name: 'margin', value: '0' },
-            { name: 'bottom', value: '0' },
-            { name: 'left', value: '0' },
-            { name: 'padding', value: '10px' },
-            { name: 'width', value: '100%' },
-            { name: 'text-align', value: 'center' },
-            { name: 'background', value: 'rgba(0, 0, 0, 0.5)' },
-          ]}
-        />
-      }
-      responsiveSizes={[
-        { screen: '1080px', height: '720px' },
-        { screen: '540px', height: '360px' },
-        { screen: '380px', height: '300px' },
-      ]}
+<Canvas
+  mdxSource={`
+  <CarouselCard 
+    responsiveSizes={
+      [
+        {
+          screen: '1080px',
+          height: '450px',
+          width: '720px',
+        },
+        {
+          screen: '760px',
+          height: '300px',
+          width: '480px',
+        },
+        {
+          screen: '540px',
+          height: '200px',
+          width: '360px',
+        },
+        {
+          screen: '380px',
+          height: '150px',
+          width: '300px',
+        },
+      ]
+    }
+    text={
+      <Text
+        text="High Score Girl"
+        props={[
+          { name: 'position', value: 'absolute' },
+          { name: 'color', value: '#ffffff' },
+          { name: 'text-transform', value: 'capitalize' },
+          { name: 'z-index', value: '2' },
+          { name: 'font-size', value: '1.5rem' },
+          { name: 'font-style', value: 'italic' },
+          { name: 'margin', value: '0' },
+          { name: 'bottom', value: '0' },
+          { name: 'left', value: '0' },
+          { name: 'padding', value: '10px' },
+          { name: 'text-align', value: 'center' },
+          { name: 'background', value: 'rgba(0, 0, 0, 0.5)' },
+          { name: 'width', value: '100percent' }
+        ]}
+      />
+    }
+    image={
+      <Image
+        alt="High Score Girl"
+        src="https://i.ibb.co/jR4rRqK/oono.webp"
+        height="100percent"
+        width="100percent"
+        zIndex={1}
     />
+    }
+  />
+`}
+>
+  <Story
+    name="Normal"
+    args={{
+      image: ImageTemplate,
+      text: TextTemplate,
+      responsiveSizes,
+    }}
+  >
+    {CarouselCardTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ## With Error
 
-<Preview>
-  <Story name="With Error">
-    <CarouselCard
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.webp"
-          height="100%"
-          width="100%"
-          zIndex={1}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'absolute' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'font-style', value: 'italic' },
-            { name: 'margin', value: '0' },
-            { name: 'bottom', value: '0' },
-            { name: 'left', value: '0' },
-            { name: 'padding', value: '10px' },
-            { name: 'width', value: '100%' },
-            { name: 'text-align', value: 'center' },
-            { name: 'background', value: 'rgba(0, 0, 0, 0.5)' },
-          ]}
-        />
-      }
+<Canvas
+  mdxSource={`
+  <CarouselCard 
+    responsiveSizes={
+      [
+        {
+          screen: '1080px',
+          height: '450px',
+          width: '720px',
+        },
+        {
+          screen: '760px',
+          height: '300px',
+          width: '480px',
+        },
+        {
+          screen: '540px',
+          height: '200px',
+          width: '360px',
+        },
+        {
+          screen: '380px',
+          height: '150px',
+          width: '300px',
+        },
+      ]
+    }
+    text={
+      <Text
+        text="High Score Girl"
+        props={[
+          { name: 'position', value: 'absolute' },
+          { name: 'color', value: '#ffffff' },
+          { name: 'text-transform', value: 'capitalize' },
+          { name: 'z-index', value: '2' },
+          { name: 'font-size', value: '1.5rem' },
+          { name: 'font-style', value: 'italic' },
+          { name: 'margin', value: '0' },
+          { name: 'bottom', value: '0' },
+          { name: 'left', value: '0' },
+          { name: 'padding', value: '10px' },
+          { name: 'text-align', value: 'center' },
+          { name: 'background', value: 'rgba(0, 0, 0, 0.5)' },
+          { name: 'width', value: '100percent' }
+        ]}
+      />
+    }
+    image={
+      <Image
+        alt="High Score Girl"
+        src="https://i.ibb.co/jR4rRqK/oono.weba"
+        height="100percent"
+        width="100percent"
+        zIndex={1}
     />
+    }
+  />
+`}
+>
+  <Story
+    name="With Error"
+    args={{
+      image: ImageErrorTemplate,
+      text: TextTemplate,
+      responsiveSizes,
+    }}
+  >
+    {CarouselCardTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={CarouselCard} />
+<ArgsTable of={CarouselCard} />

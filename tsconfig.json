@@ -5,7 +5,7 @@
     "lib": ["dom"],
     "outDir": "./build/lib",
     "jsx": "react",
-    "removeComments": true,
+    // "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,

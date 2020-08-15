@@ -1,11 +1,11 @@
-import React, { FC, Component } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { Container, ContainerProps as ContainerProperties } from './style';
 
 interface SidebarProps extends ContainerProperties {
   /**
-   * Icons
+   * Array de React elements
    */
-  icons: Array<Component>;
+  icons: ReactElement[];
 }
 
 const Sidebar: FC<SidebarProps> = ({

@@ -1,13 +1,14 @@
-import React, { FC, ReactNode, Component } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { IconStyled, IconProps as IconProperties } from './style';
 
 interface Props extends IconProperties {
-  icon: ReactNode | Component;
+  icon: ReactElement;
   onClick?: () => void;
 }
 const Icon: FC<Props> = ({
   color,
   icon,
+  background,
   backgroundHover,
   height,
   width,
@@ -20,6 +21,7 @@ const Icon: FC<Props> = ({
     <IconStyled
       color={color}
       height={height}
+      background={background}
       backgroundHover={backgroundHover}
       colorHover={colorHover}
       width={width}
