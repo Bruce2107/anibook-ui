@@ -1,125 +1,84 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { FaGithubAlt } from 'react-icons/fa';
 import Icon from '.';
 
-<Meta title="Atom|Icon" component={Icon} />
+<Meta
+  title="Atom/Icon"
+  component={Icon}
+  argTypes={{
+    background: {
+      control: 'color',
+    },
+    backgroundHover: {
+      control: 'color',
+    },
+    color: {
+      control: 'color',
+    },
+    colorHover: {
+      control: 'color',
+    },
+    height: {
+      control: 'text',
+    },
+    width: {
+      control: 'text',
+    },
+    size: {
+      control: 'text',
+    },
+    cursor: {
+      control: 'texr',
+    },
+    icon: {
+      control: 'string',
+    },
+    onClick: {
+      control: 'function',
+    },
+  }}
+/>
 
-## Icon Light
+export const IconTemplate = (args) => <Icon {...args} />;
 
-<Preview mdxSource={`<Icon color="#ff1493" icon={<FaGithubAlt />}/>`}>
-  <Story name="Icon Light">
-    <div style={{ backgroundColor: '#444' }}>
-      <Icon color="#FF1493" icon={<FaGithubAlt />} />
-    </div>
+### Default
+
+<Canvas
+  mdxSource={`<Icon color="#ff1493" icon={<FaGithubAlt /> background="#C3C3C3"}/>`}
+>
+  <Story
+    name="Default"
+    args={{ icon: <FaGithubAlt />, color: '#FF1493', background: '#C3C3C3' }}
+  >
+    {IconTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-## Icon Light With Hover
+### With OnClick Event
 
-<Preview
+<Canvas
   mdxSource={`<Icon
     color="#ff1493"
     icon={<FaGithubAlt />}
-    height="50px"
-    width="100px"
-    colorHover="#00d2d3"
-    backgroundHover="#ffea"
+    background="#C3C3C3"
+    onClick={() => { window.open('https://anibook.com.br', '_blank'); }}
   />`}
 >
-  <Story name="Icon Light With Hover">
-    <div style={{ backgroundColor: '#444' }}>
-      <Icon
-        color="#FF1493"
-        height="50px"
-        icon={<FaGithubAlt />}
-        width="100px"
-        colorHover="#00D2D3"
-        backgroundHover="#FFEA"
-      />
-    </div>
-  </Story>
-</Preview>
-
-## Icon Dark
-
-<Preview
-  mdxSource={`<Icon
-    color="#00d2d3"
-    icon={<FaGithubAlt />}
-    height="50px"
-    width="100px"
-  />`}
->
-  <Story name="Icon Dark">
-    <div style={{ backgroundColor: '#444' }}>
-      <Icon
-        color="#00D2D3"
-        height="50px"
-        icon={<FaGithubAlt />}
-        width="100px"
-      />
-    </div>
-  </Story>
-</Preview>
-
-## Icon Dark With Hover
-
-<Preview
-  mdxSource={`<Icon
-    color="#00d2d3"
-    icon={<FaGithubAlt />}
-    height="50px"
-    width="100px"
-    colorHover="#ff1493"
-    backgroundHover="#ffea"
-  />`}
->
-  <Story name="Icon Dark With Hover">
-    <div style={{ backgroundColor: '#444' }}>
-      <Icon
-        color="#00D2D3"
-        height="50px"
-        icon={<FaGithubAlt />}
-        width="100px"
-        colorHover="#FF1493"
-        backgroundHover="#FFEA"
-      />
-    </div>
-  </Story>
-</Preview>
-
-## Icon With OnClick Event
-
-<Preview
-  mdxSource={`<Icon
-    color="#00d2d3"
-    icon={<FaGithubAlt />}
-    height="50px"
-    width="100px"
-    size="20px"
-    colorHover="#ff1493"
-    backgroundHover="#ffea"
-    onClick={() => {
-      window.open('https://anibook.com.br', '_blank');
+  <Story
+    name="With on click"
+    args={{
+      icon: <FaGithubAlt />,
+      color: '#FF1493',
+      background: '#C3C3C3',
+      onClick: () => {
+        window.open('https://anibook.com.br', '_blank');
+      },
     }}
-  />`}
->
-  <Story name="Icon With OnClick Event">
-    <div style={{ backgroundColor: '#444' }}>
-      <Icon
-        color="#00D2D3"
-        height="50px"
-        size="20px"
-        icon={<FaGithubAlt />}
-        width="100px"
-        colorHover="#FF1493"
-        backgroundHover="#FFEA"
-        onClick={() => {window.open('https://anibook.com.br', '_blank');}}
-      />
-    </div>
+  >
+    {IconTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={Icon} />
+<ArgsTable of={Icon} />

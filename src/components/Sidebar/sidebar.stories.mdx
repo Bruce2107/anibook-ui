@@ -1,15 +1,56 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { FaGithubAlt } from 'react-icons/fa';
 import Icon from '../Icon';
 import Sidebar from '.';
 
-<Meta title="Molecule|Sidebar" component={Sidebar} />
+<Meta
+  title="Molecule/Sidebar"
+  component={Sidebar}
+  argTypes={{
+    bgColor: {
+      control: 'color',
+    },
+    gap: {
+      control: 'text',
+    },
+    height: {
+      control: 'text',
+    },
+    opacity: {
+      control: 'number',
+    },
+    padding: {
+      control: 'text',
+    },
+    width: {
+      control: 'text',
+    },
+    flexDirection: {
+      control: {
+        type: 'select',
+        options: [
+          'column',
+          'column-reverse',
+          'inherit',
+          'initial',
+          'row',
+          'row-reverse',
+          'unset',
+        ],
+      },
+    },
+    icons: {
+      control: 'string',
+    },
+  }}
+/>
+
+export const SidebarTemplate = (args) => <Sidebar {...args} />;
 
 ### Default
 
-<Preview>
-  <Story name="Default">
-    <Sidebar
+<Canvas
+  mdxSource={`<Sidebar
       bgColor="#ffea00"
       icons={[
         <Icon
@@ -96,10 +137,102 @@ import Sidebar from '.';
       height="200px"
       gap="10px"
       opacity={0.8}
-    />
+    />`}
+>
+  <Story
+    name="Default"
+    args={{
+      bgColor: '#ffea00',
+      icons: [
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          cursor="auto"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+        <Icon
+          color="#ff1493"
+          icon={<FaGithubAlt />}
+          width="100px"
+          height="50px"
+        />,
+      ],
+      padding: '10px 0',
+      height: '200px',
+      gap: '10px',
+    }}
+  >
+    {SidebarTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={Sidebar} />
+<ArgsTable of={Sidebar} />

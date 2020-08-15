@@ -50,8 +50,8 @@ export const Container = styled.div<ContainerProps>`
     margin: ${({ gap }) => gap || '0'};
   }
   overflow: scroll;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   &::-webkit-scrollbar {
     width: 0px;
     background: transparent;

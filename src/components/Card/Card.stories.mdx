@@ -2,176 +2,192 @@ import {
   Description,
   Meta,
   Story,
-  Preview,
-  Props,
+  Canvas,
+  ArgsTable,
 } from '@storybook/addon-docs/blocks';
 import Image from '../Image';
 import Text from '../Text';
 import Card from '.';
+import {
+  ImageComponent,
+  ImageErrorComponent,
+} from '../Image/image.stories.mdx';
 
-<Meta title="Molecule|Card" component={Card} />
+<Meta
+  title="Molecule/Card"
+  component={Card}
+  argTypes={{
+    backgroundColor: {
+      control: 'color',
+    },
+    downColorLayer: {
+      control: 'color',
+    },
+    upColorLayer: {
+      control: 'color',
+    },
+    height: {
+      control: 'text',
+    },
+    margin: {
+      control: 'text',
+    },
+    mobilePadding: {
+      control: 'text',
+    },
+    mobileWidth: {
+      control: 'text',
+    },
+    padding: {
+      control: 'text',
+    },
+    shadow: {
+      control: 'text',
+    },
+    width: {
+      control: 'text',
+    },
+    text: {
+      control: 'string',
+    },
+    image: {
+      control: 'string',
+    },
+  }}
+/>
 
-### Card Dark
+export const CardTemplate = (args) => <Card {...args} />;
 
-<Preview
+export const TextTemplate = (
+  <Text
+    text="High Score Girl"
+    props={[
+      { name: 'position', value: 'relative' },
+      { name: 'color', value: '#ffffff' },
+      { name: 'font-family', value: 'Trebuchet MS' },
+      { name: 'font-weight', value: 'bolder' },
+      { name: 'font-style', value: 'oblique' },
+      { name: 'text-transform', value: 'capitalize' },
+      { name: 'z-index', value: '2' },
+      { name: 'font-size', value: '1.5rem' },
+      { name: 'margin', value: '0' },
+    ]}
+  />
+);
+
+### Default
+
+<Canvas
   mdxSource={`<Card
-      backgroundColor="#333"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#00d2d3"
-      upColorLayer="#2e86de"
-    />`}
->
-  <Story name="Card Dark">
-    <Card
-      backgroundColor="#333"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#00d2d3"
-      upColorLayer="#2e86de"
+  backgroundColor="#333"
+  image={
+    <Image
+      alt="High Score Girl"
+      src="https://i.ibb.co/jR4rRqK/oono.png"
+      height="170px"
+      margin="0 0 15px"
+      width="302px"
+      shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+      transform="scale(1.1)"
+      transition="1s"
+      zIndex={2}
     />
+  }
+  text={
+    <Text
+      text="High Score Girl"
+      props={[
+        { name: 'position', value: 'relative' },
+        { name: 'color', value: '#ffffff' },
+        { name: 'font-family', value: 'Trebuchet MS' },
+        { name: 'font-weight', value: 'bolder' },
+        { name: 'font-style', value: 'oblique' },
+        { name: 'text-transform', value: 'capitalize' },
+        { name: 'z-index', value: '2' },
+        { name: 'font-size', value: '1.5rem' },
+        { name: 'margin', value: '0' },
+      ]}
+    />
+  }
+  downColorLayer="#00d2d3"
+  upColorLayer="#2e86de"
+/>`}
+>
+  <Story
+    name="Default"
+    args={{
+      image: ImageComponent,
+      backgroundColor: '#333',
+      text: TextTemplate,
+      downColorLayer: '#00d2d3',
+      upColorLayer: '#2e86de',
+    }}
+  >
+    {CardTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ### Card Light
 
-<Preview
+<Canvas
   mdxSource={`<Card
-      backgroundColor="#a9a9a9"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#ff1493"
-      upColorLayer="#ffd500"
-    />`}
+    backgroundColor="#a9a9a9"
+    image={
+      <Image
+        alt="High Score Girl"
+        src="https://i.ibb.co/jR4rRqK/oono.png"
+        height="170px"
+        margin="0 0 15px"
+        width="302px"
+        shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
+        transform="scale(1.1)"
+        transition="1s"
+        zIndex={2}
+      />
+    }
+    text={
+      <Text
+        text="High Score Girl"
+        props={[
+          { name: 'position', value: 'relative' },
+          { name: 'color', value: '#ffffff' },
+          { name: 'font-family', value: 'Trebuchet MS' },
+          { name: 'font-weight', value: 'bolder' },
+          { name: 'font-style', value: 'oblique' },
+          { name: 'text-transform', value: 'capitalize' },
+          { name: 'z-index', value: '2' },
+          { name: 'font-size', value: '1.5rem' },
+          { name: 'margin', value: '0' },
+        ]}
+      />
+    }
+    downColorLayer="#ff1493"
+    upColorLayer="#ffd500"
+  />`}
 >
-  <Story name="Card Light">
-    <Card
-      backgroundColor="#a9a9a9"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.png"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#ff1493"
-      upColorLayer="#ffd500"
-    />
+  <Story
+    name="Card Light"
+    args={{
+      image: ImageComponent,
+      backgroundColor: '#a9a9a9',
+      text: TextTemplate,
+      downColorLayer: '#ff1493',
+      upColorLayer: '#ffd500',
+    }}
+  >
+    {CardTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ## Card With Image Error
 
-<Preview
+<Canvas
   mdxSource={`<Card
       backgroundColor="#333"
       image={
         <Image
           alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.webp"
+          src="https://i.ibb.co/jR4rRqK/oono"
           height="170px"
           margin="0 0 15px"
           width="302px"
@@ -201,44 +217,21 @@ import Card from '.';
       upColorLayer="#2e86de"
     />`}
 >
-  <Story name="Card With Image Error">
-    <Card
-      backgroundColor="#333"
-      image={
-        <Image
-          alt="High Score Girl"
-          src="https://i.ibb.co/jR4rRqK/oono.webp"
-          height="170px"
-          margin="0 0 15px"
-          width="302px"
-          shadow="0 10px 20px rgba(0, 0, 0, 0.4)"
-          transform="scale(1.1)"
-          transition="1s"
-          zIndex={2}
-        />
-      }
-      text={
-        <Text
-          text="High Score Girl"
-          props={[
-            { name: 'position', value: 'relative' },
-            { name: 'color', value: '#ffffff' },
-            { name: 'font-family', value: 'Trebuchet MS' },
-            { name: 'font-weight', value: 'bolder' },
-            { name: 'font-style', value: 'oblique' },
-            { name: 'text-transform', value: 'capitalize' },
-            { name: 'z-index', value: '2' },
-            { name: 'font-size', value: '1.5rem' },
-            { name: 'margin', value: '0' },
-          ]}
-        />
-      }
-      downColorLayer="#00d2d3"
-      upColorLayer="#2e86de"
-    />
+  <Story
+    name="Card With Image Error"
+    name="Card Light"
+    args={{
+      image: ImageErrorComponent,
+      backgroundColor: '#a9a9a9',
+      text: TextTemplate,
+      downColorLayer: '#ff1493',
+      upColorLayer: '#ffd500',
+    }}
+  >
+    {CardTemplate.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
 ### Props
 
-<Props of={Card} />
+<ArgsTable of={Card} />

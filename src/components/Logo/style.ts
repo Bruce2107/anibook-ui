@@ -21,6 +21,7 @@ export interface TitleProps {
    * @default normal
    */
   fontStyle?: string;
+
   gradient?: string;
   /**
    * @default gradient
@@ -31,7 +32,7 @@ export interface TitleProps {
    */
   isGradient?: boolean;
   /**
-   * @default 24px;
+   * @default 24px
    */
   lineHeight?: string;
   /**

@@ -8,6 +8,7 @@ interface Props extends IconProperties {
 const Icon: FC<Props> = ({
   color,
   icon,
+  background,
   backgroundHover,
   height,
   width,
@@ -20,6 +21,7 @@ const Icon: FC<Props> = ({
     <IconStyled
       color={color}
       height={height}
+      background={background}
       backgroundHover={backgroundHover}
       colorHover={colorHover}
       width={width}
