@@ -1,23 +1,32 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Text from '.';
 
-<Meta title="Atom/Text" component={Text} />
+<Meta
+  title="Atom/Text"
+  component={Text}
+  argTypes={{
+    text: {
+      control: 'text',
+    },
+    lang: {
+      control: 'text',
+    },
+    props: {
+      control: 'array',
+    },
+    as: {
+      control: 'text',
+    },
+  }}
+/>
+
+export const TextTemplate = (args) => <Text {...args} />;
 
 ### Default
 
-<Canvas>
-  <Story name="Default">
-    <Text text="text" />
-  </Story>
-</Canvas>
-
-### Title
-
-<Canvas>
-  <Story name="Title">
-    <div className="underline">
-      <Text
-        text="text"
+<Canvas
+  mdxSource={`<Text
+        text="Anibook"
         props={[
           { name: 'margin', value: '0' },
           { name: 'padding', value: '0' },
@@ -29,8 +38,25 @@ import Text from '.';
           { name: 'font-weight', value: 'bold' },
           { name: 'font-style', value: 'oblique' },
         ]}
-      />
-    </div>
+      />`}
+>
+  <Story
+    name="Default"
+    args={{
+      props: [
+        { name: 'margin', value: '0' },
+        { name: 'padding', value: '0' },
+        { name: 'position', value: 'relative' },
+        { name: 'z-index', value: '2' },
+        { name: 'color', value: '#fff143' },
+        { name: 'font-family', value: 'Trebuchet MS' },
+        { name: 'font-weight', value: 'bold' },
+        { name: 'font-style', value: 'oblique' },
+      ],
+      text: 'Anibook',
+    }}
+  >
+    {TextTemplate.bind({})}
   </Story>
 </Canvas>
 
