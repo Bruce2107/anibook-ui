@@ -1,6 +1,6 @@
 {
   "name": "anibook-ui",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Lib com os componentes do Anibook",
   "main": "build/lib/index.js",
   "repository": "https://github.com/Bruce2107/anibook-ui.git",
