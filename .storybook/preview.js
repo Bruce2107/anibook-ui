@@ -3,6 +3,12 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 // or global addParameters
 export const parameters = {
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: ['Guia', 'Atom', 'Molecule'],
+    },
+  },
   docs: {
     theme: themes.dark,
   },
@@ -17,5 +23,5 @@ export const parameters = {
   },
   controls: {
     expanded: true,
-  }
+  },
 };
