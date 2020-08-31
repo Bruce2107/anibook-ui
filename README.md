@@ -1,8 +1,8 @@
-<h1 align="center">Anibook UI</h1>
+# Anibook UI
 
 > UI Components using React
 
-### [Demo](https://anibook-ui.vercel.app)
+## [Demo](https://anibook-ui.vercel.app)
 
 ## Using as lib
 
@@ -13,13 +13,7 @@ Fist you need to install it using NPM or Yarn.
 #### Yarn
 
 ```sh
-$ yarn add anibook-ui
-```
-
-#### NPM
-
-```sh
-$ npm i anibook-ui
+yarn add anibook-ui
 ```
 
 ### Most basic example
